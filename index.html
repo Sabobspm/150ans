@@ -160,16 +160,6 @@ body{font-family:"Gilroy",sans-serif;background:var(--cream2);color:var(--ink);m
 .info-card{background:var(--cream);border:1px solid rgba(135,110,255,.1);border-radius:4px;padding:.7rem 1rem;margin-bottom:.5rem;font-family:"Gilroy",sans-serif;font-size:.82rem;color:var(--ink2);line-height:1.5}
 .info-card strong{color:var(--deep)}
 
-
-/* ANECDOTES */
-.anec-card{background:var(--cream);border:1px solid rgba(135,110,255,.12);border-radius:8px;padding:1rem;margin-bottom:.85rem;position:relative;overflow:hidden}
-.anec-card::before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--purple)}
-.anec-year{font-family:"Gilroy",sans-serif;font-size:.58rem;color:var(--purple);font-weight:600;letter-spacing:.18em;margin-bottom:.3rem}
-.anec-title{font-family:"Arago",serif;font-size:1rem;font-weight:500;color:var(--deep);margin-bottom:.5rem;line-height:1.3}
-.anec-text{font-family:"Gilroy",sans-serif;font-size:.82rem;font-weight:300;color:var(--ink2);line-height:1.75}
-.anec-text em{font-style:italic;color:var(--ink3)}
-.anec-text strong{font-weight:600;color:var(--deep)}
-
 @media print{.tabbar,.ch-topbar,.ch-nav,.lightbox{display:none!important}.view{display:block!important;page-break-after:always}body{background:white}}
 </style>
 </head>
@@ -382,70 +372,6 @@ body{font-family:"Gilroy",sans-serif;background:var(--cream2);color:var(--ink);m
   </div>
 </div>
 
-
-<div class="view" id="anecdotes-view">
-  <div class="section-header">
-    <h2>La petite histoire</h2>
-    <p>Des archives qui ne mentent pas… ou presque</p>
-  </div>
-  <div style="padding:1rem;max-width:500px;margin:0 auto;padding-bottom:60px">
-    <p style="font-family:'Gilroy',sans-serif;font-size:.78rem;font-weight:300;color:#5a5040;line-height:1.7;margin-bottom:1.25rem;padding:.75rem 1rem;background:rgba(135,110,255,0.1);border-radius:6px;border-left:2px solid rgb(135,110,255)">Ces anecdotes s&#39;inspirent de faits réels, tirés des archives nationales et de l&#39;Observatoire.</p>
-
-    <div class="anec-card">
-      <div class="anec-year">1869</div>
-      <div class="anec-title">On adore l&#39;idée. Mais on ne la fera pas.</div>
-      <div class="anec-text">Janssen soumet son projet au ministère. La réponse officielle : <em>« Il n&#39;est nullement démontré que les travaux ne puissent pas se faire dans l&#39;un des observatoires qui existent. »</em> Ce qui, en langage administratif, signifie : <strong>« Bonne journée. »</strong></div>
-    </div>
-
-    <div class="anec-card">
-      <div class="anec-year">1874</div>
-      <div class="anec-title">On va en discuter encore 4 ans.</div>
-      <div class="anec-text">L&#39;Académie des sciences approuve enfin. Un ministre annonce fièrement : <em>« Le Gouvernement a pris l&#39;engagement de mettre ce projet à l&#39;étude. »</em> Le chantier ne commencera qu&#39;en 1878.</div>
-    </div>
-
-    <div class="anec-card">
-      <div class="anec-year">1878</div>
-      <div class="anec-title">L&#39;architecte arrive. Personne ne sait quoi lui dire.</div>
-      <div class="anec-text">L&#39;architecte Constant Moyaux est chargé de construire l&#39;Observatoire. Douze ans plus tard, il écrira : <em>« La première difficulté a été d&#39;obtenir de M. Janssen un programme détaillé. Ce n&#39;est que douze ans après qu&#39;il en a fait un commencement d&#39;études. »</em></div>
-    </div>
-
-    <div class="anec-card">
-      <div class="anec-year">1879</div>
-      <div class="anec-title">Budget voté. Crash budgétaire immédiat.</div>
-      <div class="anec-text">Budget colossal de 1 035 000 francs adopté. Trois mois plus tard : <em>« Les premières évaluations étaient trop inférieures à la réalité. »</em> Traduction : <strong>« Oups. On s&#39;est trompé de moitié. »</strong></div>
-    </div>
-
-    <div class="anec-card">
-      <div class="anec-year">1888</div>
-      <div class="anec-title">On construit la coupole dans le dos de l&#39;architecte.</div>
-      <div class="anec-text">L&#39;architecte découvre que la coupole a été commandée à l&#39;usine Cail sans lui. Il écrit, légèrement froissé : <em>« L&#39;exécution de la toiture tournante a été confiée sans que j&#39;en aie été informé. »</em></div>
-    </div>
-
-    <div class="anec-card">
-      <div class="anec-year">1890</div>
-      <div class="anec-title">La coupole fuit. Et se perce sous le doigt.</div>
-      <div class="anec-text">La coupole tant attendue est montée. Puis on constate : <em>« La tôle se corrode très vite ; la pluie pénètre en plusieurs points. »</em> En 1906 : <em>« La tôle se perce sous la pression du doigt. »</em> Et Janssen a dû prendre sur les crédits des instruments pour payer le toit. <strong>Spoiler : le toit n&#39;était pas étanche.</strong></div>
-    </div>
-
-    <div class="anec-card">
-      <div class="anec-year">1933</div>
-      <div class="anec-title">Un chef-d&#39;œuvre. Mais il penche.</div>
-      <div class="anec-text">Après des années de travaux, la grande lunette est splendide. Une commission découvre : <em>« L&#39;optique est excellente, mais la monture la rend pour ainsi dire inutilisable autrement que pour des travaux de second plan. »</em> En clair : <strong>on a construit un chef-d&#39;œuvre, mais il penche.</strong></div>
-    </div>
-
-    <div class="anec-card">
-      <div class="anec-year">1940</div>
-      <div class="anec-title">Game of Thrones, avec des lunettes astronomiques.</div>
-      <div class="anec-text">Les archives révèlent : <em>« Les astronomes à Meudon prétendent disposer des locaux comme ils l&#39;entendent ; ils considèrent même les laboratoires comme leur propriété. »</em> Et plus loin : <em>« Le mot anarchie est plus que jamais de rigueur. »</em></div>
-    </div>
-
-    <div style="background:rgb(13,10,24);border-radius:8px;padding:1.25rem 1rem;margin-top:1.5rem;text-align:center">
-      <div style="font-family:'Arago',serif;font-size:1.1rem;color:#f0ece4;margin-bottom:.6rem;line-height:1.4">Et pendant tout ce temps-là…</div>
-      <div style="font-family:'Gilroy',sans-serif;font-size:.82rem;font-weight:300;color:rgba(240,236,228,.65);line-height:1.7">Lyot invente les éclipses artificielles. On met fin au mythe des canaux martiens. On découvre qu&#39;Uranus tourne à l&#39;envers.<br><br><strong style="color:rgb(135,110,255)">Envers et contre tout, Meudon n&#39;attend jamais.</strong></div>
-    </div>
-  </div>
-</div>
-
 <nav class="tabbar">
   <button class="tab active" id="tab-home" onclick="showView('cover-view','tab-home')">
     <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>Accueil
@@ -456,11 +382,8 @@ body{font-family:"Gilroy",sans-serif;background:var(--cream2);color:var(--ink);m
   <button class="tab" id="tab-groupes" onclick="showView('groupes-view','tab-groupes')">
     <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>Groupes
   </button>
-  <button class="tab" id="tab-quiz" onclick="showView('quiz-view','tab-quiz')">
+  <button class="tab" id="tab-quiz" onclick="showView('quiz-view','tab-quiz'); initQuiz()">
     <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>Quiz
-  </button>
-  <button class="tab" id="tab-anecdotes" onclick="showView('anecdotes-view','tab-anecdotes')">
-    <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>Archives
   </button>
   <button class="tab" id="tab-map" onclick="showView('map-view','tab-map')">
     <svg viewBox="0 0 24 24"><polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"/><line x1="8" y1="2" x2="8" y2="18"/><line x1="16" y1="6" x2="16" y2="22"/></svg>Plan
@@ -619,7 +542,6 @@ function openLightbox(src, cap) {
 }
 function closeLightbox() { document.getElementById('lightbox').classList.remove('open'); }
 document.addEventListener('keydown', e => { if(e.key==='Escape') closeLightbox(); });
-window.addEventListener('load', () => { initQuiz(); });
 
 /* ── QUIZ INTERACTIF ── */
 const quizData = [
@@ -638,8 +560,13 @@ const quizData = [
 
 let score = 0;
 let answered = 0;
+let quizInited = false;
 
-function initQuiz() { renderQuiz(); }
+function initQuiz() {
+  if(quizInited) return;
+  quizInited = true;
+  renderQuiz();
+}
 
 function renderQuiz() {
   score = 0; answered = 0;
@@ -701,11 +628,11 @@ function showResult() {
   const r = document.getElementById('quiz-result');
   const pct = score / quizData.length;
   let emoji, msg;
-  if(pct === 1)      { emoji='🏆'; msg='Parfait ! Vous êtes un expert de l\'Observatoire !'; }
-  else if(pct >= .8) { emoji='⭐'; msg='Excellent ! Vous avez bien visité !'; }
-  else if(pct >= .6) { emoji='🔭'; msg='Pas mal ! L\'Observatoire n\'a plus beaucoup de secrets pour vous.'; }
-  else if(pct >= .4) { emoji='🌙'; msg='Vous progressez ! Une prochaine visite s\'impose.'; }
-  else               { emoji='🌱'; msg='C\'est un début ! L\'astronomie vous attend encore.'; }
+  if(pct === 1)      { emoji='🏆'; msg='Parfait ! Vous êtes un·e expert·e de l'Observatoire !'; }
+  else if(pct >= .8) { emoji='⭐'; msg='Excellent ! Vous avez bien visité !'; }
+  else if(pct >= .6) { emoji='🔭'; msg='Pas mal ! L'Observatoire n'a plus beaucoup de secrets pour vous.'; }
+  else if(pct >= .4) { emoji='🌙'; msg='Vous progressez ! Une prochaine visite s'impose.'; }
+  else               { emoji='🌱'; msg='C'est un début ! L'astronomie vous attend encore.'; }
   document.getElementById('result-emoji').textContent = emoji;
   document.getElementById('result-score').textContent = score + ' / ' + quizData.length;
   document.getElementById('result-msg').textContent = msg;
