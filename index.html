@@ -160,6 +160,16 @@ body{font-family:"Gilroy",sans-serif;background:var(--cream2);color:var(--ink);m
 .info-card{background:var(--cream);border:1px solid rgba(135,110,255,.1);border-radius:4px;padding:.7rem 1rem;margin-bottom:.5rem;font-family:"Gilroy",sans-serif;font-size:.82rem;color:var(--ink2);line-height:1.5}
 .info-card strong{color:var(--deep)}
 
+
+/* ANECDOTES */
+.anec-card{background:var(--cream);border:1px solid rgba(135,110,255,.12);border-radius:8px;padding:1rem;margin-bottom:.85rem;position:relative;overflow:hidden}
+.anec-card::before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--purple)}
+.anec-year{font-family:"Gilroy",sans-serif;font-size:.58rem;color:var(--purple);font-weight:600;letter-spacing:.18em;margin-bottom:.3rem}
+.anec-title{font-family:"Arago",serif;font-size:1rem;font-weight:500;color:var(--deep);margin-bottom:.5rem;line-height:1.3}
+.anec-text{font-family:"Gilroy",sans-serif;font-size:.82rem;font-weight:300;color:var(--ink2);line-height:1.75}
+.anec-text em{font-style:italic;color:var(--ink3)}
+.anec-text strong{font-weight:600;color:var(--deep)}
+
 @media print{.tabbar,.ch-topbar,.ch-nav,.lightbox{display:none!important}.view{display:block!important;page-break-after:always}body{background:white}}
 </style>
 </head>
@@ -216,115 +226,113 @@ body{font-family:"Gilroy",sans-serif;background:var(--cream2);color:var(--ink);m
 
 <div class="view" id="groupes-view">
   <div class="section-header"><h2>Parcours par groupe</h2><p>Accueil à partir de 12h · Visites de 14h à 17h</p></div>
-  <div class="groupes-body">
-    <div class="groupe-intro">Grande Coupole ⇒ 10 min · Ateliers ⇒ 20 min<br>Accueil commun 13h50 → 14h00</div>
+  <div style="background:rgba(135,110,255,0.1);border-left:3px solid rgb(135,110,255);margin:0;padding:.85rem 1.25rem;font-family:'Gilroy',sans-serif;font-size:.8rem;font-weight:300;color:#3a3020;line-height:1.6;text-align:center">
+    💜 Un grand merci aux guides volontaires qui donnent de leur temps pour faire découvrir nos instruments à vos familles !
+  </div>
 
     <div class="groupe-card">
       <div class="groupe-header"><div class="groupe-badge" style="background:#e74c3c">G1</div><div class="groupe-title">Groupe 1</div></div>
       <div class="groupe-stops">
-        <div class="stop-item"><div class="stop-time">14h00</div><div class="stop-dot"></div><div class="stop-info"><div class="stop-name">Grande Coupole</div><div class="stop-detail">Bât. 9 · 14h00 → 14h10</div></div></div>
-        <div class="stop-item"><div class="stop-time">14h20</div><div class="stop-dot"></div><div class="stop-info"><div class="stop-name">Table équatoriale</div><div class="stop-detail">Bât. 5 · 14h20 → 14h40</div></div></div>
-        <div class="stop-item"><div class="stop-time">15h10</div><div class="stop-dot"></div><div class="stop-info"><div class="stop-name">Bibliothèque</div><div class="stop-detail">Bât. 18 · 15h10 → 15h30</div></div></div>
+        <div class="stop-item"><div class="stop-time">14h00</div><div class="stop-dot"></div><div class="stop-info"><div class="stop-name">Grande Coupole</div><div class="stop-detail">Bât. 9 · 14h00 → 14h15</div></div></div>
+        <div class="stop-item"><div class="stop-time">14h30</div><div class="stop-dot"></div><div class="stop-info"><div class="stop-name">Table équatoriale</div><div class="stop-detail">Bât. 5 · 14h30 → 14h50</div></div></div>
       </div>
     </div>
 
     <div class="groupe-card">
       <div class="groupe-header"><div class="groupe-badge" style="background:#3498db">G2</div><div class="groupe-title">Groupe 2</div></div>
       <div class="groupe-stops">
-        <div class="stop-item"><div class="stop-time">14h10</div><div class="stop-dot"></div><div class="stop-info"><div class="stop-name">Grande Coupole</div><div class="stop-detail">Bât. 9 · 14h10 → 14h20</div></div></div>
-        <div class="stop-item"><div class="stop-time">14h30</div><div class="stop-dot"></div><div class="stop-info"><div class="stop-name">Spectrohéliographe</div><div class="stop-detail">Bât. 7 · 14h30 → 14h50</div></div></div>
-        <div class="stop-item"><div class="stop-time">15h20</div><div class="stop-dot"></div><div class="stop-info"><div class="stop-name">Bibliothèque</div><div class="stop-detail">Bât. 18 · 15h20 → 15h40</div></div></div>
+        <div class="stop-item"><div class="stop-time">14h15</div><div class="stop-dot"></div><div class="stop-info"><div class="stop-name">Grande Coupole</div><div class="stop-detail">Bât. 9 · 14h15 → 14h30</div></div></div>
+        <div class="stop-item"><div class="stop-time">14h45</div><div class="stop-dot"></div><div class="stop-info"><div class="stop-name">Cœlostat</div><div class="stop-detail">Bât. 7 · 14h45 → 15h05</div></div></div>
+        <div class="stop-item"><div class="stop-time">15h10</div><div class="stop-dot"></div><div class="stop-info"><div class="stop-name">Spectrohéliographe</div><div class="stop-detail">Bât. 7 · 15h10 → 15h30</div></div></div>
       </div>
     </div>
 
     <div class="groupe-card">
       <div class="groupe-header"><div class="groupe-badge" style="background:#27ae60">G3</div><div class="groupe-title">Groupe 3</div></div>
       <div class="groupe-stops">
-        <div class="stop-item"><div class="stop-time">14h30</div><div class="stop-dot"></div><div class="stop-info"><div class="stop-name">Grande Coupole</div><div class="stop-detail">Bât. 9 · 14h30 → 14h40</div></div></div>
-        <div class="stop-item"><div class="stop-time">14h50</div><div class="stop-dot"></div><div class="stop-info"><div class="stop-name">Spectrohéliographe</div><div class="stop-detail">Bât. 7 · 14h50 → 15h10</div></div></div>
-        <div class="stop-item"><div class="stop-time">15h30</div><div class="stop-dot"></div><div class="stop-info"><div class="stop-name">Cherenkov (GCT)</div><div class="stop-detail">près Bât. 6 · 15h30 → 15h40</div></div></div>
+        <div class="stop-item"><div class="stop-time">14h30</div><div class="stop-dot"></div><div class="stop-info"><div class="stop-name">Grande Coupole</div><div class="stop-detail">Bât. 9 · 14h30 → 14h45</div></div></div>
+        <div class="stop-item"><div class="stop-time">15h00</div><div class="stop-dot"></div><div class="stop-info"><div class="stop-name">Cherenkov (GCT)</div><div class="stop-detail">près Bât. 6 · 15h00 → 15h20</div></div></div>
       </div>
     </div>
 
     <div class="groupe-card">
       <div class="groupe-header"><div class="groupe-badge" style="background:#8e44ad">G4</div><div class="groupe-title">Groupe 4</div></div>
       <div class="groupe-stops">
-        <div class="stop-item"><div class="stop-time">14h40</div><div class="stop-dot"></div><div class="stop-info"><div class="stop-name">Grande Coupole</div><div class="stop-detail">Bât. 9 · 14h40 → 14h50</div></div></div>
-        <div class="stop-item"><div class="stop-time">15h00</div><div class="stop-dot"></div><div class="stop-info"><div class="stop-name">Cherenkov (GCT)</div><div class="stop-detail">près Bât. 6 · 15h00 → 15h20</div></div></div>
-        <div class="stop-item"><div class="stop-time">15h50</div><div class="stop-dot"></div><div class="stop-info"><div class="stop-name">Spectrohéliographe</div><div class="stop-detail">Bât. 7 · 15h50 → 16h10</div></div></div>
+        <div class="stop-item"><div class="stop-time">14h45</div><div class="stop-dot"></div><div class="stop-info"><div class="stop-name">Grande Coupole</div><div class="stop-detail">Bât. 9 · 14h45 → 15h00</div></div></div>
+        <div class="stop-item"><div class="stop-time">15h30</div><div class="stop-dot"></div><div class="stop-info"><div class="stop-name">CTS (Salle blanche)</div><div class="stop-detail">Bât. 15 · 15h30 → 15h50</div></div></div>
       </div>
     </div>
 
     <div class="groupe-card">
       <div class="groupe-header"><div class="groupe-badge" style="background:#e67e22">G5</div><div class="groupe-title">Groupe 5</div></div>
       <div class="groupe-stops">
-        <div class="stop-item"><div class="stop-time">14h00</div><div class="stop-dot"></div><div class="stop-info"><div class="stop-name">CTS (Salle blanche)</div><div class="stop-detail">Bât. 15 · 14h00 → 14h20</div></div></div>
-        <div class="stop-item"><div class="stop-time">15h00</div><div class="stop-dot"></div><div class="stop-info"><div class="stop-name">Grande Coupole</div><div class="stop-detail">Bât. 9 · 15h00 → 15h10</div></div></div>
-        <div class="stop-item"><div class="stop-time">15h30</div><div class="stop-dot"></div><div class="stop-info"><div class="stop-name">Cœlostat</div><div class="stop-detail">Bât. 5 · 15h30 → 15h50</div></div></div>
+        <div class="stop-item"><div class="stop-time">15h00</div><div class="stop-dot"></div><div class="stop-info"><div class="stop-name">Grande Coupole</div><div class="stop-detail">Bât. 9 · 15h00 → 15h15</div></div></div>
+        <div class="stop-item"><div class="stop-time">14h20</div><div class="stop-dot"></div><div class="stop-info"><div class="stop-name">Bibliothèque</div><div class="stop-detail">Bât. 18 · 14h20 → 14h40</div></div></div>
       </div>
     </div>
 
     <div class="groupe-card">
       <div class="groupe-header"><div class="groupe-badge" style="background:#f1c40f;color:#1a1410">G6</div><div class="groupe-title">Groupe 6</div></div>
       <div class="groupe-stops">
-        <div class="stop-item"><div class="stop-time">14h00</div><div class="stop-dot"></div><div class="stop-info"><div class="stop-name">Cœlostat</div><div class="stop-detail">Bât. 5 · 14h00 → 14h20</div></div></div>
-        <div class="stop-item"><div class="stop-time">14h40</div><div class="stop-dot"></div><div class="stop-info"><div class="stop-name">Bibliothèque</div><div class="stop-detail">Bât. 18 · 14h40 → 15h00</div></div></div>
-        <div class="stop-item"><div class="stop-time">15h20</div><div class="stop-dot"></div><div class="stop-info"><div class="stop-name">Grande Coupole</div><div class="stop-detail">Bât. 9 · 15h20 → 15h30</div></div></div>
+        <div class="stop-item"><div class="stop-time">15h15</div><div class="stop-dot"></div><div class="stop-info"><div class="stop-name">Grande Coupole</div><div class="stop-detail">Bât. 9 · 15h15 → 15h30</div></div></div>
+        <div class="stop-item"><div class="stop-time">16h00</div><div class="stop-dot"></div><div class="stop-info"><div class="stop-name">Table équatoriale</div><div class="stop-detail">Bât. 5 · 16h00 → 16h20</div></div></div>
       </div>
     </div>
 
     <div class="groupe-card">
       <div class="groupe-header"><div class="groupe-badge" style="background:#16a085">G7</div><div class="groupe-title">Groupe 7</div></div>
       <div class="groupe-stops">
-        <div class="stop-item"><div class="stop-time">14h20</div><div class="stop-dot"></div><div class="stop-info"><div class="stop-name">Bibliothèque</div><div class="stop-detail">Bât. 18 · 14h20 → 14h30</div></div></div>
-        <div class="stop-item"><div class="stop-time">15h30</div><div class="stop-dot"></div><div class="stop-info"><div class="stop-name">Grande Coupole</div><div class="stop-detail">Bât. 9 · 15h30 → 15h40</div></div></div>
-        <div class="stop-item"><div class="stop-time">16h10</div><div class="stop-dot"></div><div class="stop-info"><div class="stop-name">Table équatoriale</div><div class="stop-detail">Bât. 5 · 16h10 → 16h30</div></div></div>
+        <div class="stop-item"><div class="stop-time">15h30</div><div class="stop-dot"></div><div class="stop-info"><div class="stop-name">Grande Coupole</div><div class="stop-detail">Bât. 9 · 15h30 → 15h45</div></div></div>
+        <div class="stop-item"><div class="stop-time">15h55</div><div class="stop-dot"></div><div class="stop-info"><div class="stop-name">Cœlostat</div><div class="stop-detail">Bât. 7 · 15h55 → 16h15</div></div></div>
+        <div class="stop-item"><div class="stop-time">16h20</div><div class="stop-dot"></div><div class="stop-info"><div class="stop-name">Spectrohéliographe</div><div class="stop-detail">Bât. 7 · 16h20 → 16h40</div></div></div>
       </div>
     </div>
 
     <div class="groupe-card">
       <div class="groupe-header"><div class="groupe-badge" style="background:#2c3e50">G8</div><div class="groupe-title">Groupe 8</div></div>
       <div class="groupe-stops">
-        <div class="stop-item"><div class="stop-time">14h00</div><div class="stop-dot"></div><div class="stop-info"><div class="stop-name">Table équatoriale</div><div class="stop-detail">Bât. 5 · 14h00 → 14h10</div></div></div>
-        <div class="stop-item"><div class="stop-time">14h20</div><div class="stop-dot"></div><div class="stop-info"><div class="stop-name">CTS (Salle blanche)</div><div class="stop-detail">Bât. 15 · 14h20 → 14h40</div></div></div>
-        <div class="stop-item"><div class="stop-time">15h00</div><div class="stop-dot"></div><div class="stop-info"><div class="stop-name">Cœlostat</div><div class="stop-detail">Bât. 5 · 15h00 → 15h20</div></div></div>
-        <div class="stop-item"><div class="stop-time">16h10</div><div class="stop-dot"></div><div class="stop-info"><div class="stop-name">Grande Coupole</div><div class="stop-detail">Bât. 9 · 16h10 → 16h20</div></div></div>
+        <div class="stop-item"><div class="stop-time">15h45</div><div class="stop-dot"></div><div class="stop-info"><div class="stop-name">Grande Coupole</div><div class="stop-detail">Bât. 9 · 15h45 → 16h00</div></div></div>
+        <div class="stop-item"><div class="stop-time">14h30</div><div class="stop-dot"></div><div class="stop-info"><div class="stop-name">Cherenkov (GCT)</div><div class="stop-detail">près Bât. 6 · 14h30 → 14h50</div></div></div>
       </div>
     </div>
 
     <div class="groupe-card">
       <div class="groupe-header"><div class="groupe-badge" style="background:#ff00ff">G9</div><div class="groupe-title">Groupe 9</div></div>
       <div class="groupe-stops">
-        <div class="stop-item"><div class="stop-time">14h00</div><div class="stop-dot"></div><div class="stop-info"><div class="stop-name">Spectrohéliographe</div><div class="stop-detail">Bât. 7 · 14h00 → 14h20</div></div></div>
-        <div class="stop-item"><div class="stop-time">14h30</div><div class="stop-dot"></div><div class="stop-info"><div class="stop-name">Cherenkov (GCT)</div><div class="stop-detail">près Bât. 6 · 14h30 → 14h50</div></div></div>
-        <div class="stop-item"><div class="stop-time">15h50</div><div class="stop-dot"></div><div class="stop-info"><div class="stop-name">Grande Coupole</div><div class="stop-detail">Bât. 9 · 15h50 → 16h00</div></div></div>
+        <div class="stop-item"><div class="stop-time">16h00</div><div class="stop-dot"></div><div class="stop-info"><div class="stop-name">Grande Coupole</div><div class="stop-detail">Bât. 9 · 16h00 → 16h15</div></div></div>
+        <div class="stop-item"><div class="stop-time">15h00</div><div class="stop-dot"></div><div class="stop-info"><div class="stop-name">CTS (Salle blanche)</div><div class="stop-detail">Bât. 15 · 15h00 → 15h20</div></div></div>
       </div>
     </div>
 
     <div class="groupe-card">
       <div class="groupe-header"><div class="groupe-badge" style="background:#7b1fa2">G10</div><div class="groupe-title">Groupe 10</div></div>
       <div class="groupe-stops">
-        <div class="stop-item"><div class="stop-time">14h50</div><div class="stop-dot"></div><div class="stop-info"><div class="stop-name">Table équatoriale</div><div class="stop-detail">Bât. 5 · 14h50 → 15h10</div></div></div>
-        <div class="stop-item"><div class="stop-time">15h30</div><div class="stop-dot"></div><div class="stop-info"><div class="stop-name">Bibliothèque</div><div class="stop-detail">Bât. 18 · 15h30 → 15h40</div></div></div>
-        <div class="stop-item"><div class="stop-time">16h30</div><div class="stop-dot"></div><div class="stop-info"><div class="stop-name">Grande Coupole</div><div class="stop-detail">Bât. 9 · 16h30 → 16h40</div></div></div>
+        <div class="stop-item"><div class="stop-time">16h15</div><div class="stop-dot"></div><div class="stop-info"><div class="stop-name">Grande Coupole</div><div class="stop-detail">Bât. 9 · 16h15 → 16h30</div></div></div>
+        <div class="stop-item"><div class="stop-time">15h00</div><div class="stop-dot"></div><div class="stop-info"><div class="stop-name">Bibliothèque</div><div class="stop-detail">Bât. 18 · 15h00 → 15h20</div></div></div>
       </div>
     </div>
 
     <div class="groupe-card">
       <div class="groupe-header"><div class="groupe-badge" style="background:#00bcd4">G11</div><div class="groupe-title">Groupe 11</div></div>
       <div class="groupe-stops">
-        <div class="stop-item"><div class="stop-time">14h20</div><div class="stop-dot"></div><div class="stop-info"><div class="stop-name">Spectrohéliographe</div><div class="stop-detail">Bât. 7 · 14h20 → 14h30</div></div></div>
-        <div class="stop-item"><div class="stop-time">15h00</div><div class="stop-dot"></div><div class="stop-info"><div class="stop-name">CTS (Salle blanche)</div><div class="stop-detail">Bât. 15 · 15h00 → 15h10</div></div></div>
-        <div class="stop-item"><div class="stop-time">16h20</div><div class="stop-dot"></div><div class="stop-info"><div class="stop-name">Grande Coupole</div><div class="stop-detail">Bât. 9 · 16h20 → 16h30</div></div></div>
+        <div class="stop-item"><div class="stop-time">16h30</div><div class="stop-dot"></div><div class="stop-info"><div class="stop-name">Grande Coupole</div><div class="stop-detail">Bât. 9 · 16h30 → 16h45</div></div></div>
+        <div class="stop-item"><div class="stop-time">15h00</div><div class="stop-dot"></div><div class="stop-info"><div class="stop-name">Table équatoriale</div><div class="stop-detail">Bât. 5 · 15h00 → 15h20</div></div></div>
       </div>
     </div>
 
     <div class="groupe-card">
       <div class="groupe-header"><div class="groupe-badge" style="background:#4caf50">G12</div><div class="groupe-title">Groupe 12</div></div>
       <div class="groupe-stops">
-        <div class="stop-item"><div class="stop-time">15h20</div><div class="stop-dot"></div><div class="stop-info"><div class="stop-name">Table équatoriale</div><div class="stop-detail">Bât. 5 · 15h20 → 15h30</div></div></div>
-        <div class="stop-item"><div class="stop-time">16h10</div><div class="stop-dot"></div><div class="stop-info"><div class="stop-name">Cœlostat</div><div class="stop-detail">Bât. 5 · 16h10 → 16h20</div></div></div>
-        <div class="stop-item"><div class="stop-time">16h50</div><div class="stop-dot"></div><div class="stop-info"><div class="stop-name">Grande Coupole</div><div class="stop-detail">Bât. 9 · 16h50 → 17h00</div></div></div>
+        <div class="stop-item"><div class="stop-time">16h45</div><div class="stop-dot"></div><div class="stop-info"><div class="stop-name">Grande Coupole</div><div class="stop-detail">Bât. 9 · 16h45 → 17h00</div></div></div>
+        <div class="stop-item"><div class="stop-time">15h15</div><div class="stop-dot"></div><div class="stop-info"><div class="stop-name">Cœlostat</div><div class="stop-detail">Bât. 7 · 15h15 → 15h35</div></div></div>
+        <div class="stop-item"><div class="stop-time">15h40</div><div class="stop-dot"></div><div class="stop-info"><div class="stop-name">Spectrohéliographe</div><div class="stop-detail">Bât. 7 · 15h40 → 16h00</div></div></div>
+      </div>
+    </div>
+
+    <div class="groupe-card">
+      <div class="groupe-header"><div class="groupe-badge" style="background:#555">T1M</div><div class="groupe-title">Télescope 1 m</div></div>
+      <div class="groupe-stops">
+        <div class="stop-item"><div class="stop-time">14h–17h</div><div class="stop-dot"></div><div class="stop-info"><div class="stop-name">Accès libre</div><div class="stop-detail">Bât. 10 · sous réserve guide habilité</div></div></div>
       </div>
     </div>
 
@@ -352,7 +360,7 @@ body{font-family:"Gilroy",sans-serif;background:var(--cream2);color:var(--ink);m
 <div class="view" id="map-view">
   <div class="section-header"><h2>Plan & Infos pratiques</h2><p>Campus de Meudon</p></div>
   <div class="map-body">
-    <div class="map-img-wrap"><img src="images/plan_site.jpg" alt="Plan du campus de Meudon"></div>
+    <div class="map-img-wrap"><img src="images/plan_site.pdf" alt="Plan du campus de Meudon"></div>
     <div class="map-legend">
       <div class="legend-item"><div class="legend-dot" style="background:var(--purple)"></div><div class="legend-text">Instruments & visites</div></div>
       <div class="legend-item"><div class="legend-dot" style="background:#f0e000"></div><div class="legend-text">Sanitaires</div></div>
@@ -372,6 +380,18 @@ body{font-family:"Gilroy",sans-serif;background:var(--cream2);color:var(--ink);m
   </div>
 </div>
 
+
+<div class="view" id="anecdotes-view">  <div class="section-header">
+    <h2>La petite histoire</h2>
+    <p>Archives · Bibliothèque</p>
+  </div>
+  <div style="padding:2rem 1.5rem;max-width:500px;margin:0 auto;padding-bottom:60px;text-align:center">
+    <div style="font-size:2.5rem;margin-bottom:1rem">📚</div>
+    <div style="font-family:'Arago',serif;font-size:1.2rem;color:#2c1f0e;margin-bottom:.75rem">Infos en attente</div>
+    <div style="font-family:'Gilroy',sans-serif;font-size:.82rem;font-weight:300;color:#5a5040;line-height:1.7">Le contenu de cette section est en cours de préparation avec la Bibliothèque de l'Observatoire.<br>Revenez bientôt !</div>
+  </div>
+</div>
+
 <nav class="tabbar">
   <button class="tab active" id="tab-home" onclick="showView('cover-view','tab-home')">
     <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>Accueil
@@ -382,8 +402,11 @@ body{font-family:"Gilroy",sans-serif;background:var(--cream2);color:var(--ink);m
   <button class="tab" id="tab-groupes" onclick="showView('groupes-view','tab-groupes')">
     <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>Groupes
   </button>
-  <button class="tab" id="tab-quiz" onclick="showView('quiz-view','tab-quiz'); initQuiz()">
+  <button class="tab" id="tab-quiz" onclick="showView('quiz-view','tab-quiz')">
     <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>Quiz
+  </button>
+  <button class="tab" id="tab-anecdotes" onclick="showView('anecdotes-view','tab-anecdotes')">
+    <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>Archives
   </button>
   <button class="tab" id="tab-map" onclick="showView('map-view','tab-map')">
     <svg viewBox="0 0 24 24"><polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"/><line x1="8" y1="2" x2="8" y2="18"/><line x1="16" y1="6" x2="16" y2="22"/></svg>Plan
@@ -542,6 +565,7 @@ function openLightbox(src, cap) {
 }
 function closeLightbox() { document.getElementById('lightbox').classList.remove('open'); }
 document.addEventListener('keydown', e => { if(e.key==='Escape') closeLightbox(); });
+window.addEventListener('load', () => { initQuiz(); });
 
 /* ── QUIZ INTERACTIF ── */
 const quizData = [
@@ -560,13 +584,8 @@ const quizData = [
 
 let score = 0;
 let answered = 0;
-let quizInited = false;
 
-function initQuiz() {
-  if(quizInited) return;
-  quizInited = true;
-  renderQuiz();
-}
+function initQuiz() { renderQuiz(); }
 
 function renderQuiz() {
   score = 0; answered = 0;
@@ -628,11 +647,11 @@ function showResult() {
   const r = document.getElementById('quiz-result');
   const pct = score / quizData.length;
   let emoji, msg;
-  if(pct === 1)      { emoji='🏆'; msg='Parfait ! Vous êtes un·e expert·e de l'Observatoire !'; }
-  else if(pct >= .8) { emoji='⭐'; msg='Excellent ! Vous avez bien visité !'; }
-  else if(pct >= .6) { emoji='🔭'; msg='Pas mal ! L'Observatoire n'a plus beaucoup de secrets pour vous.'; }
-  else if(pct >= .4) { emoji='🌙'; msg='Vous progressez ! Une prochaine visite s'impose.'; }
-  else               { emoji='🌱'; msg='C'est un début ! L'astronomie vous attend encore.'; }
+  if(pct === 1)      { emoji='🏆'; msg='Parfait ! Vous êtes un expert de l\'Observatoire !'; }
+  else if(pct >= .8) { emoji='⭐'; msg='Excellent ! Vous avez bien visité !'; }
+  else if(pct >= .6) { emoji='🔭'; msg='Pas mal ! L\'Observatoire n\'a plus beaucoup de secrets pour vous.'; }
+  else if(pct >= .4) { emoji='🌙'; msg='Vous progressez ! Une prochaine visite s\'impose.'; }
+  else               { emoji='🌱'; msg='C\'est un début ! L\'astronomie vous attend encore.'; }
   document.getElementById('result-emoji').textContent = emoji;
   document.getElementById('result-score').textContent = score + ' / ' + quizData.length;
   document.getElementById('result-msg').textContent = msg;
