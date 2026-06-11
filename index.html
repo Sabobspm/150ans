@@ -207,12 +207,12 @@ body{font-family:"Gilroy",sans-serif;background:var(--cream2);color:var(--ink);m
     <div class="tile" onclick="showChapter(6)"><div class="tile-num">07</div><div class="tile-title">Table équatoriale</div><div class="tile-sub">Instrument historique</div></div>
     <div class="tile" onclick="showChapter(7)"><div class="tile-num">08</div><div class="tile-title">Le télescope de 1 m</div><div class="tile-sub">Optique · Photographie</div></div>
     <div class="tile" onclick="showChapter(8)"><div class="tile-num">09</div><div class="tile-title">Système solaire</div><div class="tile-sub">Parcours pédagogique</div></div>
-    <div class="tile full" onclick="showChapter(9)"><div class="tile-num">10</div><div class="tile-title">L'Observatoire aujourd'hui</div><div class="tile-sub">Et demain</div></div>
+    <div class="tile" onclick="showChapter(10)"><div class="tile-num">10</div><div class="tile-title">Le domaine</div><div class="tile-sub">Patrimoine naturel</div></div>
+    <div class="tile full" onclick="showChapter(9)"><div class="tile-num">11</div><div class="tile-title">L'Observatoire aujourd'hui</div><div class="tile-sub">Et demain</div></div>
     <div style="grid-column:1/-1;font-family:'Gilroy',sans-serif;font-size:.6rem;font-weight:600;color:var(--ink3);letter-spacing:.15em;text-transform:uppercase;padding:.5rem .25rem .25rem;border-top:1px solid var(--border);margin-top:.25rem">Autres lieux remarquables</div>
-    <div class="tile" onclick="showChapter(10)"><div class="tile-num">11</div><div class="tile-title">Tour solaire</div><div class="tile-sub">Sentinelle du Soleil</div></div>
-    <div class="tile" onclick="showChapter(11)"><div class="tile-num">12</div><div class="tile-title">Petites coupoles</div><div class="tile-sub">Enseignement & Club astro</div></div>
-    <div class="tile" onclick="showChapter(12)"><div class="tile-num">13</div><div class="tile-title">Sphère de Labeyrie</div><div class="tile-sub">Patrimoine scientifique</div></div>
-    <div class="tile" onclick="showChapter(13)"><div class="tile-num">14</div><div class="tile-title">Le domaine</div><div class="tile-sub">Patrimoine naturel</div></div>
+    <div class="tile" onclick="showChapter(11)"><div class="tile-num">11</div><div class="tile-title">Tour solaire</div><div class="tile-sub">Sentinelle du Soleil</div></div>
+    <div class="tile" onclick="showChapter(12)"><div class="tile-num">12</div><div class="tile-title">Petites coupoles</div><div class="tile-sub">Enseignement & Club astro</div></div>
+    <div class="tile" onclick="showChapter(13)"><div class="tile-num">13</div><div class="tile-title">Sphère de Labeyrie</div><div class="tile-sub">Patrimoine scientifique</div></div>
   </div>
 </div>
 
@@ -725,6 +725,16 @@ const chapters = [
     <div class="fact"><div class="fact-lbl">Le saviez-vous ?</div><p>L'Observatoire de Paris – PSL, c'est aujourd'hui 800 chercheurs, ingénieurs et personnels administratifs et techniques, répartis sur trois sites — Paris, Meudon et Nançay —, et des étudiants de la licence au doctorat qui feront la science de demain.</p></div>`
   },
   {
+    tag:"Patrimoine naturel", title:"Le domaine de l'Observatoire",
+    chapeau:"64 hectares de forêt en pleine ville, refuge exceptionnel pour la biodiversité.",
+    content:`<p>Avec ses 64 hectares dont 50 hectares de forêt, le domaine de l'Observatoire est un véritable écrin de verdure en pleine ville. Classé monument historique et site inscrit, il bénéficie d'une protection exceptionnelle due à son statut exclusivement scientifique depuis l'époque du Domaine Royal.</p>
+    <p>La forêt est un refuge pour la biodiversité — renards, écureuils roux, faisans, canards colverts et une grande variété d'oiseaux y cohabitent, aux côtés de papillons comme le Demi-deuil ou le Vulcain.</p>
+    <p>En raison de ses habitats très diversifiés, les espèces floristiques sont très nombreuses sur le site. Plus de 200 espèces y ont été recensées, dont certaines très rares et menacées d'extinction.</p>
+    <div class="img-wrap paysage" onclick="openLightbox('images/Renard-3.jpg','Un renard sur le campus de Meudon')"><img src="images/Renard-3.jpg" alt="Renard sur le campus"></div>
+    <div class="img-caption">Un renard sur le campus de Meudon · © Adrien Girardot</div>`
+  }
+  ,
+  {
     tag:"Sentinelle du Soleil · 1969", title:"La Tour solaire",
     chapeau:"Visible au-dessus de la cime des arbres, la tour solaire veille sur 60 ans d'histoire scientifique.",
     content:`<p>La tour solaire de Meudon est l'un des bâtiments les plus emblématiques du campus. Mise en service en 1969, elle a été conçue pour placer les instruments d'observation à 35 mètres de hauteur, au-dessus des couches d'air turbulentes qui brouillent les images près du sol.</p>
@@ -755,15 +765,6 @@ const chapters = [
     <div class="img-wrap paysage" onclick="openLightbox('images/sphere_labeyrie.jpg','La sphère de Labeyrie')"><img src="images/sphere_labeyrie.jpg" alt="Sphère de Labeyrie"></div>
     <div class="img-caption">La sphère de Labeyrie · © Eitan Péchevis</div>`
   },
-  {
-    tag:"Patrimoine naturel", title:"Le domaine de l'Observatoire",
-    chapeau:"64 hectares de forêt en pleine ville, refuge exceptionnel pour la biodiversité.",
-    content:`<p>Avec ses 64 hectares dont 50 hectares de forêt, le domaine de l'Observatoire est un véritable écrin de verdure en pleine ville. Classé monument historique et site inscrit, il bénéficie d'une protection exceptionnelle due à son statut exclusivement scientifique depuis l'époque du Domaine Royal.</p>
-    <p>La forêt est un refuge pour la biodiversité — renards, écureuils roux, faisans, canards colverts et une grande variété d'oiseaux y cohabitent, aux côtés de papillons comme le Demi-deuil ou le Vulcain.</p>
-    <p>En raison de ses habitats très diversifiés, les espèces floristiques sont très nombreuses sur le site. Plus de 200 espèces y ont été recensées, dont certaines très rares et menacées d'extinction.</p>
-    <div class="img-wrap paysage" onclick="openLightbox('images/Renard-3.jpg','Un renard sur le campus de Meudon')"><img src="images/Renard-3.jpg" alt="Renard sur le campus"></div>
-    <div class="img-caption">Un renard sur le campus de Meudon · © Adrien Girardot</div>`
-  }
 ];
 
 let current = 0;
