@@ -200,7 +200,7 @@ body{font-family:"Gilroy",sans-serif;background:var(--cream2);color:var(--ink);m
   <div class="menu-grid">
     <div class="tile" onclick="showChapter(0)"><div class="tile-num">01</div><div class="tile-title">La genèse du site</div><div class="tile-sub">1876 · La fondation</div></div>
     <div class="tile" onclick="showChapter(1)"><div class="tile-num">02</div><div class="tile-title">La Grande Coupole</div><div class="tile-sub">Patrimoine restauré</div></div>
-    <div class="tile" onclick="showChapter(2)"><div class="tile-num">03</div><div class="tile-title">L'exposition 150 ans</div><div class="tile-sub">Bibliothèque · 2026</div></div>
+    <div class="tile" onclick="showChapter(2)"><div class="tile-num">03</div><div class="tile-title">L'exposition "150 ans"</div><div class="tile-sub">Bibliothèque · 2026</div></div>
     <div class="tile" onclick="showChapter(3)"><div class="tile-num">04</div><div class="tile-title">Cœlostat & Soleil</div><div class="tile-sub">Observation solaire</div></div>
     <div class="tile" onclick="showChapter(4)"><div class="tile-num">05</div><div class="tile-title">Salle blanche</div><div class="tile-sub">Haute technologie</div></div>
     <div class="tile" onclick="showChapter(5)"><div class="tile-num">06</div><div class="tile-title">GCT</div><div class="tile-sub">Astronomie gamma</div></div>
@@ -600,7 +600,7 @@ body{font-family:"Gilroy",sans-serif;background:var(--cream2);color:var(--ink);m
 <script>
 const chapters = [
   {
-    tag:"1876 · La fondation", title:"La genèse du site",
+    tag:"1876 · La fondation", title:"La genèse du site meudonnais",
     chapeau:"Sur les ruines d'un château royal, un visionnaire bâtit le premier observatoire d'astrophysique de France.",
     content:`<p>En 1869, Jules Janssen (1824–1907) soumet au ministère son projet révolutionnaire : créer un établissement entièrement dédié à l'étude physique des astres, en s'appuyant sur deux techniques alors nouvelles, la photographie et la spectroscopie. La réponse est mitigée :</p>
     <p style="font-style:italic;color:var(--ink3);border-left:2px solid var(--border);padding-left:.75rem;margin:.5rem 0">« Il n'est nullement démontré que les travaux ne puissent pas se faire dans l'un des observatoires qui existent. »<br><span style="font-size:.75rem">AN F17.3726 — Note Jourdain, 1869</span></p>
@@ -627,7 +627,7 @@ const chapters = [
     tag:"Patrimoine restauré", title:"La Grande Coupole",
     chapeau:"Après deux années d'un chantier collectif et passionné, la Grande Lunette a retrouvé sa pleine capacité d'observation.",
     content:`<p>Édifiée entre 1889 et 1893, la Grande Coupole de Meudon abrite l'une des plus grandes lunettes astronomiques d'Europe, avec un objectif de 83 cm de diamètre. Pendant des décennies, elle a servi aux observations du Soleil, des planètes et des étoiles doubles. Mais avec le temps, les mécanismes se sont grippés, les optiques ont souffert.</p>
-    <p>Un groupe de travail interne, le G3TLC, s'est formé et, en collaboration avec les services techniques de l'Observatoire et plusieurs entreprises spécialisées, a relevé le défi. Deux années de travaux minutieux ont permis de redonner sa vue à cet instrument emblématique. La coupole tourne à nouveau, la lunette pointe vers le ciel : en juillet 2024, les premières observations ont été réalisées après 33 ans de sommeil !   </p>
+    <p>Un groupe de travail interne, le G3TLC, s'est formé et, en collaboration avec les services techniques de l'Observatoire et plusieurs entreprises spécialisées, a relevé le défi. Deux années de travaux minutieux ont permis de redonner sa vue à cet instrument emblématique. La coupole tourne à nouveau, la lunette pointe vers le ciel : en juillet 2024, les premières observations ont été réalisées après 33 ans de sommeil !</p>
     <div class="img-wrap paysage" onclick="openLightbox('images/GC_exterieur.jpg','La Grande Coupole, vue extérieure')"><img src="images/GC_exterieur.jpg" alt="Grande Coupole extérieur"></div>
     <div class="img-caption">La Grande Coupole, vue extérieure · © Observatoire de Paris</div>
     <div class="fact"><div class="fact-lbl">Le saviez-vous ?</div><p>83 cm de diamètre, 16,23 m de focale. Lors de son inauguration en 1893, c'était la deuxième plus grande lunette du monde. Classée Monument Historique depuis 1972.</p></div>
@@ -635,20 +635,20 @@ const chapters = [
     <div class="img-caption">Intérieur de la Grande Coupole et sa lunette · © Observatoire de Paris, ST</div>`
   },
   {
-    tag:"2026 · Bibliothèque", title:"L'exposition 150 ans",
+    tag:"2026 · Bibliothèque", title:"L'exposition \"150 ans\"",
     chapeau:"La Bibliothèque de l'Observatoire donne à voir 150 ans d'histoire à travers ses archives et collections exceptionnelles.",
     content:`<p>Pour célébrer ce double anniversaire — 150 ans de la fondation du site et centenaire du rattachement à l'Observatoire de Paris —, la Bibliothèque a conçu une exposition retraçant les grandes étapes scientifiques et humaines qui ont façonné Meudon.</p>
     <p>Photographies historiques, carnets d'observations, instruments anciens, correspondances de Jules Janssen : les collections patrimoniales de l'Observatoire recèlent des trésors rarement montrés au public.</p>
     <div class="img-wrap paysage" onclick="openLightbox('images/expo_bib_150.jpg','Exposition 150 ans de l\'Observatoire de Meudon')"><img src="images/expo_bib_150.jpg" alt="Exposition 150 ans"></div>
     <div class="img-caption">Exposition 150 ans — Bibliothèque de l'Observatoire de Paris</div>
     <p>Le haut de l'exposition en salle de lecture vous fera découvrir le portrait des grandes figures de l'Observatoire à Meudon.</p>
-    <p><strong style="color:var(--purple)">Jules Janssen</strong> est le découvreur de l'hélium en 1867. Il acquiert le droit de disposer de l'Observatoire de Meudon où il installe une lunette et un télescope de grande envergure permettant d'obtenir des images de protubérances solaires.</p>
-    <p><strong style="color:var(--purple)">Henri Deslandres</strong> est nommé directeur-adjoint en 1897 puis directeur après la mort de Janssen. Il est le fondateur du Grand Sidérostat et de la Table équatoriale.</p>
-    <p><strong style="color:var(--purple)">Lucien d'Azambuja</strong>, aidé de sa femme Marguerite Roumens, obtient une série d'images inédites du spectre solaire, alliant astronomie et géophysique.</p>
-    <p><strong style="color:var(--purple)">Bernard Lyot</strong> construit un coronomètre rendant possible l'étude de la couronne solaire en 1950.</p>
-    <p><strong style="color:var(--purple)">André Danjon</strong>, directeur durant plus de 18 ans, réhabilite les Communs et lance la Tour solaire, une grande bibliothèque et un centre de calcul.</p>
-    <p><strong style="color:var(--purple)">Jean-François Denisse</strong>, créateur de l'Institut National d'Astronomie et de Géophysique (I.N.A.G.) en 1967.</p>
-    <p><strong style="color:var(--purple)">Audouin Dollfus</strong>, découvreur du satellite Janus en 1966, président du centre de données photographiques des planètes de l'UAI de 1961 à 1980.</p>
+    <p><strong style="color:var(--purple)">Jules Janssen</strong> est le découvreur de l'hélium en 1868. Il acquiert le droit de disposer de l'Observatoire de Meudon où il installe une lunette et un télescope de grande envergure permettant d'obtenir des images de protubérances solaires.</p>
+    <p><strong style="color:var(--purple)">Henri Deslandres (1853–1948)</strong> est nommé directeur-adjoint en 1897 puis directeur après la mort de Janssen. Il est le fondateur du Grand Sidérostat et de la Table équatoriale.</p>
+    <p><strong style="color:var(--purple)">Lucien d'Azambuja (1884–1970)</strong>, aidé de sa femme Marguerite Roumens, obtient une série d'images inédites du spectre solaire, alliant astronomie et géophysique.</p>
+    <p><strong style="color:var(--purple)">Bernard Lyot (1897–1952)</strong> construit un coronographe rendant possible l'étude de la couronne solaire en 1950.</p>
+    <p><strong style="color:var(--purple)">André Danjon (1890–1967)</strong>, directeur durant plus de 18 ans, réhabilite les Communs et lance la Tour solaire, une grande bibliothèque et un centre de calcul.</p>
+    <p><strong style="color:var(--purple)">Jean-François Denisse (1915–2014)</strong>, créateur de l'Institut National d'Astronomie et de Géophysique (I.N.A.G.) en 1967.</p>
+    <p><strong style="color:var(--purple)">Audouin Dollfus (1924–2010)</strong>, découvreur du satellite Janus en 1966, président du centre de données photographiques des planètes de l'UAI de 1961 à 1980.</p>
     <p>En sous-sol, une maquette originale présente l'aménagement intérieur de la Grande Coupole. Les vitrines montrent un plan et une vue aérienne du site depuis l'arrivée de Janssen en 1876.</p>
     <p>Enfin, vous verrez la reproduction du spectrohéliographe mis au point par Henri Deslandres en 1892, ainsi que la photographie de la table équatoriale.</p>`
   },
