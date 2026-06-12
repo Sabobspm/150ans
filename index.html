@@ -171,6 +171,21 @@ body{font-family:"Gilroy",sans-serif;background:var(--cream2);color:var(--ink);m
 .anec-text em{font-style:italic;color:var(--ink3)}
 .anec-text strong{font-weight:600;color:var(--deep)}
 
+/* VISITES LIBRES PANEL */
+.vl-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:500}
+.vl-overlay.open{display:block}
+.vl-panel{position:fixed;bottom:0;left:0;right:0;background:var(--cream);border-radius:16px 16px 0 0;z-index:501;transform:translateY(100%);transition:transform .35s ease;max-height:80svh;overflow-y:auto;padding-bottom:2rem}
+.vl-panel.open{transform:translateY(0)}
+.vl-header{display:flex;align-items:center;justify-content:space-between;padding:1rem 1.25rem .75rem;border-bottom:1px solid var(--border);position:sticky;top:0;background:var(--cream);z-index:1}
+.vl-title{font-family:'Arago',serif;font-size:1.1rem;font-weight:500;color:var(--deep)}
+.vl-close{background:none;border:none;font-size:1.5rem;color:var(--ink3);cursor:pointer;line-height:1;padding:.2rem .4rem}
+.vl-close:hover{color:var(--purple)}
+.vl-body{padding:.75rem 1.25rem}
+.vl-instrument{margin-bottom:.85rem}
+.vl-inst-name{font-family:'Gilroy',sans-serif;font-size:.8rem;font-weight:700;color:var(--deep);margin-bottom:.35rem}
+.vl-slots{display:flex;flex-wrap:wrap;gap:.3rem}
+.vl-slot{font-family:'Gilroy',sans-serif;font-size:.7rem;font-weight:400;color:var(--ink2);background:var(--cream2);border:1px solid var(--border);border-radius:4px;padding:.2rem .5rem}
+
 @media print{.tabbar,.ch-topbar,.ch-nav,.lightbox{display:none!important}.view{display:block!important;page-break-after:always}body{background:white}}
 </style>
 </head>
@@ -234,18 +249,23 @@ body{font-family:"Gilroy",sans-serif;background:var(--cream2);color:var(--ink);m
 </div>
 
 <div class="view" id="groupes-view">
-  <div class="section-header"><h2>Parcours par groupe</h2><p>Accueil à partir de 12h · Visites de 14h à 17h</p></div>
+  <div class="section-header"><h2>Ma visite</h2><p>Accueil à partir de 12h · Visites de 14h à 17h</p></div>
   <div style="background:rgba(135,110,255,0.1);border-left:3px solid rgb(135,110,255);margin:0;padding:.85rem 1.25rem;font-family:'Gilroy',sans-serif;font-size:.8rem;font-weight:300;color:#3a3020;line-height:1.6;text-align:center">
     Un grand merci aux guides volontaires qui donnent de leur temps pour faire découvrir nos instruments à vos familles !
   </div>
-  <div style="padding:.75rem 1rem 0">
-    <div style="background:var(--cream);border:1px solid rgba(135,110,255,.2);border-radius:6px;padding:.65rem 1rem;margin-bottom:.65rem;font-family:'Gilroy',sans-serif;font-size:.8rem;font-weight:600;color:var(--purple);text-align:center">
+  <div class="groupes-body">
+    <div style="background:var(--cream);border:1px solid rgba(135,110,255,.2);border-radius:6px;padding:.65rem 1rem;margin-bottom:.75rem;font-family:'Gilroy',sans-serif;font-size:.8rem;font-weight:600;color:var(--purple);text-align:center">
       La constitution des groupes se fait au point d'accueil
     </div>
-    <div style="font-family:'Gilroy',sans-serif;font-size:.75rem;font-weight:300;color:var(--ink2);line-height:1.6;margin-bottom:.75rem;padding:.5rem .75rem;background:var(--cream2);border-radius:6px">
-      Grande Coupole ⇒ 15 min · Ateliers ⇒ 20 min · Visites de 14h à 17h
+    <div class="groupe-card" onclick="openVL()" style="cursor:pointer;background:var(--cream);border:1px solid rgba(135,110,255,.25)">
+      <div class="groupe-header" style="background:var(--purple-l)">
+        <div class="groupe-badge" style="background:var(--purple)">🔓</div>
+        <div>
+          <div class="groupe-title">Visites libres</div>
+          <div style="font-family:'Gilroy',sans-serif;font-size:.65rem;font-weight:300;color:var(--ink3)">Instruments accessibles entre les groupes · Tap pour les créneaux</div>
+        </div>
+      </div>
     </div>
-  </div>
     <div class="groupe-card">
       <div class="groupe-header"><div class="groupe-badge" style="background:#e74c3c">G1</div><div class="groupe-title">Groupe 1</div></div>
       <div class="groupe-stops">
@@ -344,9 +364,6 @@ body{font-family:"Gilroy",sans-serif;background:var(--cream2);color:var(--ink);m
         <div class="stop-item"><div class="stop-time">15h40</div><div class="stop-dot"></div><div class="stop-info"><div class="stop-name">Spectrohéliographe</div><div class="stop-detail">Bât. 7 · 15h40 → 16h00</div></div></div>
       </div>
     </div>
-
-
-
   </div>
 </div>
 
@@ -369,18 +386,23 @@ body{font-family:"Gilroy",sans-serif;background:var(--cream2);color:var(--ink);m
 </div>
 
 <div class="view" id="groupes-view">
-  <div class="section-header"><h2>Parcours par groupe</h2><p>Accueil à partir de 12h · Visites de 14h à 17h</p></div>
+  <div class="section-header"><h2>Ma visite</h2><p>Accueil à partir de 12h · Visites de 14h à 17h</p></div>
   <div style="background:rgba(135,110,255,0.1);border-left:3px solid rgb(135,110,255);margin:0;padding:.85rem 1.25rem;font-family:'Gilroy',sans-serif;font-size:.8rem;font-weight:300;color:#3a3020;line-height:1.6;text-align:center">
     Un grand merci aux guides volontaires qui donnent de leur temps pour faire découvrir nos instruments à vos familles !
   </div>
-  <div style="padding:.75rem 1rem 0">
-    <div style="background:var(--cream);border:1px solid rgba(135,110,255,.2);border-radius:6px;padding:.65rem 1rem;margin-bottom:.65rem;font-family:'Gilroy',sans-serif;font-size:.8rem;font-weight:600;color:var(--purple);text-align:center">
+  <div class="groupes-body">
+    <div style="background:var(--cream);border:1px solid rgba(135,110,255,.2);border-radius:6px;padding:.65rem 1rem;margin-bottom:.75rem;font-family:'Gilroy',sans-serif;font-size:.8rem;font-weight:600;color:var(--purple);text-align:center">
       La constitution des groupes se fait au point d'accueil
     </div>
-    <div style="font-family:'Gilroy',sans-serif;font-size:.75rem;font-weight:300;color:var(--ink2);line-height:1.6;margin-bottom:.75rem;padding:.5rem .75rem;background:var(--cream2);border-radius:6px">
-      Grande Coupole ⇒ 15 min · Ateliers ⇒ 20 min · Visites de 14h à 17h
+    <div class="groupe-card" onclick="openVL()" style="cursor:pointer;background:var(--cream);border:1px solid rgba(135,110,255,.25)">
+      <div class="groupe-header" style="background:var(--purple-l)">
+        <div class="groupe-badge" style="background:var(--purple)">🔓</div>
+        <div>
+          <div class="groupe-title">Visites libres</div>
+          <div style="font-family:'Gilroy',sans-serif;font-size:.65rem;font-weight:300;color:var(--ink3)">Instruments accessibles entre les groupes · Tap pour les créneaux</div>
+        </div>
+      </div>
     </div>
-  </div>
     <div class="groupe-card">
       <div class="groupe-header"><div class="groupe-badge" style="background:#e74c3c">G1</div><div class="groupe-title">Groupe 1</div></div>
       <div class="groupe-stops">
@@ -479,9 +501,6 @@ body{font-family:"Gilroy",sans-serif;background:var(--cream2);color:var(--ink);m
         <div class="stop-item"><div class="stop-time">15h40</div><div class="stop-dot"></div><div class="stop-info"><div class="stop-name">Spectrohéliographe</div><div class="stop-detail">Bât. 7 · 15h40 → 16h00</div></div></div>
       </div>
     </div>
-
-
-
   </div>
 </div>
 
@@ -517,7 +536,8 @@ body{font-family:"Gilroy",sans-serif;background:var(--cream2);color:var(--ink);m
     </div>
     <div class="infos-title">Informations pratiques</div>
     <div class="info-card" style="display:flex;align-items:center;gap:.5rem"><div style="width:14px;height:14px;background:rgb(255,0,0);border-radius:2px;flex-shrink:0"></div><span><strong>PC Sécurité</strong> — 01 45 07 75 80</span></div>
-    <div class="info-card"><img src="data:image/jpeg;base64,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" style="width:20px;height:20px;object-fit:cover;border-radius:2px;vertical-align:middle;margin-right:4px"><strong>Sanitaires</strong> — Grande Coupole · Cœlostat · CTS · Bât. 18 · Restaurant</div>
+    <div class="info-card">🎫 <strong>Accueil & inscriptions aux visites</strong> — Rendez-vous sur l'aire de pique-nique (pelouse derrière le Cœlostat, Bât. 7) pour vous inscrire aux visites guidées.</div>
+    <div class="info-card"><img src="data:image/jpeg;base64,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" style="width:20px;height:20px;object-fit:cover;border-radius:2px;vertical-align:middle;margin-right:4px"><strong>Sanitaires</strong> — Château Bât. 9 · Spectrographe Bât. 7 · CTS Bât. 15 · Bibliothèque Bât. 18 · Restaurant Bât. 4</div>
     <div class="info-card">🧺 <strong>Aire pique-nique</strong> — Pelouse derrière le Bâtiment 7. Pensez à apporter un sac pour vos déchets !</div>
     <div class="info-card"><div style="width:20px;height:20px;background:rgb(1,112,201);border-radius:3px;color:white;font-weight:700;font-size:12px;display:inline-flex;align-items:center;justify-content:center;vertical-align:middle;margin-right:4px">P</div><strong>Parking</strong> — Bâtiment 18</div>
     <div class="info-card"><div style="width:20px;height:20px;background:rgb(255,255,0);border-radius:3px;border:1px solid #ccc;color:#333;font-weight:700;font-size:10px;display:inline-flex;align-items:center;justify-content:center;vertical-align:middle;margin-right:4px">→</div><strong>Entrée piétons & véhicules</strong> — 11 avenue Marcellin Berthelot</div>
@@ -570,6 +590,78 @@ body{font-family:"Gilroy",sans-serif;background:var(--cream2);color:var(--ink);m
   </div>
 </div>
 
+
+<!-- VISITES LIBRES PANEL -->
+<div class="vl-overlay" id="vl-overlay" onclick="closeVL()"></div>
+<div class="vl-panel" id="vl-panel">
+  <div class="vl-header">
+    <div class="vl-title">🔓 Visites libres</div>
+    <button class="vl-close" onclick="closeVL()">✕</button>
+  </div>
+  <div class="vl-body">
+    <p style="font-family:'Gilroy',sans-serif;font-size:.75rem;font-weight:300;color:var(--ink3);margin-bottom:1rem;line-height:1.6">Entre les visites de groupe, les instruments sont accessibles librement (hormis la Grande Coupole). Renseignez-vous auprès des guides sur place.</p>
+
+    <div class="vl-instrument">
+      <div class="vl-inst-name">Table équatoriale — Bât. 5</div>
+      <div class="vl-slots">
+        <span class="vl-slot">14h00 – 14h30</span>
+        <span class="vl-slot">15h20 – 16h00</span>
+        <span class="vl-slot">16h20 – 17h00</span>
+      </div>
+    </div>
+
+    <div class="vl-instrument">
+      <div class="vl-inst-name">Cœlostat — Bât. 7</div>
+      <div class="vl-slots">
+        <span class="vl-slot">14h00 – 14h45</span>
+        <span class="vl-slot">15h35 – 15h55</span>
+        <span class="vl-slot">16h15 – 17h00</span>
+      </div>
+    </div>
+
+    <div class="vl-instrument">
+      <div class="vl-inst-name">Spectrohéliographe — Bât. 7</div>
+      <div class="vl-slots">
+        <span class="vl-slot">14h00 – 15h10</span>
+        <span class="vl-slot">15h40 – 16h00</span>
+        <span class="vl-slot">16h40 – 17h00</span>
+      </div>
+    </div>
+
+    <div class="vl-instrument">
+      <div class="vl-inst-name">Cherenkov GCT — derrière Bât. 5</div>
+      <div class="vl-slots">
+        <span class="vl-slot">14h00 – 14h30</span>
+        <span class="vl-slot">15h20 – 17h00</span>
+      </div>
+    </div>
+
+    <div class="vl-instrument">
+      <div class="vl-inst-name">CTS (Salle blanche) — Bât. 15</div>
+      <div class="vl-slots">
+        <span class="vl-slot">14h00 – 15h00</span>
+        <span class="vl-slot">15h50 – 17h00</span>
+      </div>
+    </div>
+
+    <div class="vl-instrument">
+      <div class="vl-inst-name">Bibliothèque / Expo — Bât. 18</div>
+      <div class="vl-slots">
+        <span class="vl-slot">14h00 – 14h20</span>
+        <span class="vl-slot">14h40 – 15h00</span>
+        <span class="vl-slot">15h20 – 17h00</span>
+      </div>
+    </div>
+    <div class="vl-instrument">
+      <div class="vl-inst-name">Parcours Système solaire</div>
+      <div class="vl-slots">
+        <span class="vl-slot">14h00 – 17h00 (accès libre)</span>
+      </div>
+    </div>
+
+  </div>
+</div>
+
 <nav class="tabbar">
   <button class="tab active" id="tab-home" onclick="showView('cover-view','tab-home')">
     <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>Accueil
@@ -578,7 +670,7 @@ body{font-family:"Gilroy",sans-serif;background:var(--cream2);color:var(--ink);m
     <svg viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>Découvrir
   </button>
   <button class="tab" id="tab-groupes" onclick="showView('groupes-view','tab-groupes')">
-    <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>Groupes
+    <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>Ma visite
   </button>
   <button class="tab" id="tab-quiz" onclick="showView('quiz-view','tab-quiz')">
     <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>Quiz
@@ -620,15 +712,19 @@ const chapters = [
   {
     tag:"Patrimoine restauré", title:"La Grande Coupole",
     chapeau:"Après deux années d'un chantier collectif et passionné, la Grande Lunette a retrouvé sa pleine capacité d'observation.",
-    content:`<p>Édifiée entre 1889 et 1893, la Grande Coupole de Meudon abrite la plus grande lunette astronomique nocturne d'Europe, avec un objectif de 83 cm de diamètre. Pendant des décennies, elle a servi aux observations et a joué un rôle central dans l'essor de l'astrophysique moderne. À son actif notamment : la mise en évidence de la rotation rétrograde d'Uranus en 1902, la réfutation des canaux martiens artificiels en 1909, la localisation des nuages de Mars au-dessus des tempêtes de poussières en 1924, les observations de diverses binaires, novæ et comètes dont la comète 1P/Halley en 1986. Mais avec le temps, les mécanismes se sont grippés, les optiques ont souffert.</p>
+    content:`<p><strong>Édifiée entre 1889 et 1893,</strong> la Grande Coupole de Meudon abrite la plus grande lunette astronomique nocturne d'Europe, avec un objectif de 83 cm de diamètre. Pendant des décennies, elle a servi aux observations et a joué un rôle central dans l'essor de l'astrophysique moderne.<br><br>À son actif notamment : la mise en évidence de la rotation rétrograde d'Uranus en 1902, la réfutation des canaux martiens artificiels en 1909, la localisation des nuages de Mars au-dessus des tempêtes de poussières en 1924, les observations de diverses binaires, novæ et comètes dont la comète 1P/Halley en 1986.<br><br>Mais avec le temps, les mécanismes se sont grippés, les optiques ont souffert.</p>
     <p>Un groupe de travail interne, le G3TLC, a été mis en place par la présidence de l'Observatoire et, en collaboration avec les services techniques de l'Observatoire, a relevé le défi. Deux années de travaux minutieux ont permis de redonner sa vue à cet instrument emblématique. La coupole tourne à nouveau, la lunette pointe vers le ciel : en juillet 2024, les premières observations ont été réalisées après 33 ans de sommeil !</p>
     <div class="img-wrap paysage" onclick="openLightbox('images/grande_lunette-86.jpg','La Grande Lunette')"><img src="images/grande_lunette-86.jpg" alt="La Grande Lunette"></div>
     <div class="img-caption">La Grande Lunette · © Raphaël de Assis Peralta</div>
     <div class="img-wrap paysage" onclick="openLightbox('images/Grande lunette-nuit.jpg','La Grande Lunette de nuit')"><img src="images/Grande lunette-nuit.jpg" alt="La Grande Lunette de nuit"></div>
     <div class="img-caption">La Grande Lunette de nuit · © Raphaël de Assis Peralta</div>
     <div class="fact"><div class="fact-lbl">Le saviez-vous ?</div><p>83 cm de diamètre, 16,23 m de focale. C'est la plus grande lunette nocturne d'Europe et la 3e au monde. Classée Monument Historique depuis 1972.</p></div>
-    <div class="img-wrap paysage" onclick="openLightbox('images/GC_interieur.JPG','Intérieur de la Grande Coupole et sa lunette')"><img src="images/GC_interieur.JPG" alt="Intérieur Grande Coupole"></div>
-    <div class="img-caption">Intérieur de la Grande Coupole et sa lunette · © Observatoire de Paris, ST</div>`
+    <div style="margin-top:.75rem;padding:.6rem .85rem;background:var(--purple-l);border-radius:6px;border-left:2px solid var(--purple)">
+      <a href="https://lira.observatoiredeparis.psl.eu/La-Grande-lunette-de-Meudon-retrouve-la-lumiere-des-astres" target="_blank" style="font-family:'Gilroy',sans-serif;font-size:.78rem;font-weight:600;color:var(--purple);text-decoration:none">🔗 En savoir plus →</a>
+      <div style="font-family:'Gilroy',sans-serif;font-size:.68rem;font-weight:300;color:var(--ink3);margin-top:.15rem">La Grande Lunette de Meudon retrouve la lumière des astres</div>
+    </div>
+    <div class="img-wrap paysage" onclick="openLightbox('images/GC_exterieur.jpg','La grande coupole')"><img src="images/GC_exterieur.jpg" alt="La grande coupole"></div>
+    <div class="img-caption">La grande coupole · © Observatoire de Paris</div>`
   },
   {
     tag:"2026 · Bibliothèque", title:"L'exposition \"150 ans\"",
@@ -652,7 +748,7 @@ const chapters = [
     tag:"Observation solaire", title:"Cœlostat & le Soleil",
     chapeau:"Depuis plus d'un siècle, Meudon scrute notre étoile quotidiennement, accumulant l'une des plus longues séries d'observations solaires au monde.",
     content:`<p>Le cœlostat est un miroir motorisé qui compense la rotation de la Terre pour maintenir une image fixe du Soleil. Il renvoie la lumière solaire vers le spectrohéliographe, instrument emblématique de Meudon mis en service en 1908.</p>
-    <p>Le spectrohéliographe décompose la lumière du Soleil et ne retient qu'une longueur d'onde précise — typiquement la raie Hα de l'hydrogène — pour cartographier les structures de l'atmosphère solaire : filaments, protubérances, taches solaires. Ces images quotidiennes, produites sans interruption depuis plus d'un siècle, constituent une archive scientifique d'une valeur inestimable.</p>
+    <p>Le spectrohéliographe décompose la lumière du Soleil et ne retient qu'une longueur d'onde précise — typiquement la raie Hα de l'hydrogène — pour cartographier les structures de l'atmosphère solaire : filaments, protubérances, taches solaires. Ces images quotidiennes, produites quasi sans interruption depuis plus d'un siècle — avec pour seules exceptions la Première Guerre mondiale et le confinement de 2020 — constituent une archive scientifique d'une valeur inestimable.</p>
     <div class="img-wrap paysage" onclick="openLightbox('images/coelostat2-2.jpg','Le cœlostat de Meudon')"><img src="images/coelostat2-2.jpg" alt="Le cœlostat"></div>
     <div class="img-caption">Le cœlostat de Meudon · © Observatoire de Paris</div>
     <div class="img-wrap paysage" onclick="openLightbox('images/spectroheliographe.jpg','Le spectrohéliographe')"><img src="images/spectroheliographe.jpg" alt="Le spectrohéliographe"></div>
@@ -761,7 +857,11 @@ const chapters = [
     chapeau:"Un petit prototype qui a ouvert la voie à une révolution en astronomie.",
     content:`<p>Construit au début des années 70, ce petit prototype en pierre a permis à Antoine Labeyrie de démontrer l'utilité de l'interférométrie optique en astronomie. Grâce à ses travaux, Labeyrie aura permis de défricher une nouvelle technique d'observation, aujourd'hui utilisée par le plus grand télescope du monde, le VLT, dans le désert de l'Atacama.</p>
     <div class="img-wrap paysage" onclick="openLightbox('images/sphere_labeyrie.jpg','La sphère de Labeyrie')"><img src="images/sphere_labeyrie.jpg" alt="Sphère de Labeyrie"></div>
-    <div class="img-caption">La sphère de Labeyrie · © Eitan Péchevis</div>`
+    <div class="img-caption">La sphère de Labeyrie · © Eitan Péchevis</div>
+    <div style="margin-top:.75rem;padding:.6rem .85rem;background:var(--purple-l);border-radius:6px;border-left:2px solid var(--purple)">
+      <a href="https://lira.observatoiredeparis.psl.eu/La-grande-aventure-de-l-interferometrie" target="_blank" style="font-family:'Gilroy',sans-serif;font-size:.78rem;font-weight:600;color:var(--purple);text-decoration:none">🔗 En savoir plus →</a>
+      <div style="font-family:'Gilroy',sans-serif;font-size:.68rem;font-weight:300;color:var(--ink3);margin-top:.15rem">La grande aventure de l'interférométrie</div>
+    </div>`
   },
 ];
 
@@ -801,7 +901,16 @@ function openLightbox(src, cap) {
   document.getElementById('lightbox').classList.add('open');
 }
 function closeLightbox() { document.getElementById('lightbox').classList.remove('open'); }
-document.addEventListener('keydown', e => { if(e.key==='Escape') closeLightbox(); });
+document.addEventListener('keydown', e => { if(e.key==='Escape') { closeLightbox(); closeVL(); } });
+
+function openVL() {
+  document.getElementById('vl-overlay').classList.add('open');
+  document.getElementById('vl-panel').classList.add('open');
+}
+function closeVL() {
+  document.getElementById('vl-overlay').classList.remove('open');
+  document.getElementById('vl-panel').classList.remove('open');
+}
 window.addEventListener('load', () => { initQuiz(); });
 
 /* ── QUIZ INTERACTIF ── */
