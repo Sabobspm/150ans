@@ -214,7 +214,7 @@ body{font-family:"Gilroy",sans-serif;background:var(--cream2);color:var(--ink);m
     <div class="tile full" onclick="showChapter(9)"><div class="tile-num">10</div><div class="tile-title">L'Observatoire aujourd'hui</div><div class="tile-sub">Et demain</div></div>
     <div style="grid-column:1/-1;font-family:'Gilroy',sans-serif;font-size:.6rem;font-weight:600;color:var(--ink3);letter-spacing:.15em;text-transform:uppercase;padding:.5rem .25rem .25rem;border-top:1px solid var(--border);margin-top:.25rem">Autres lieux remarquables</div>
     <div class="tile" onclick="showChapter(11)"><div class="tile-num">11</div><div class="tile-title">Tour solaire</div><div class="tile-sub">Sentinelle du Soleil</div></div>
-    <div class="tile" onclick="showChapter(14)"><div class="tile-num">12</div><div class="tile-title">Télescope de 1 m</div><div class="tile-sub">Accès libre</div></div>
+    <div class="tile" onclick="showChapter(7)"><div class="tile-num">12</div><div class="tile-title">Télescope de 1 m</div><div class="tile-sub">Accès libre</div></div>
     <div class="tile" onclick="showChapter(12)"><div class="tile-num">13</div><div class="tile-title">Petites coupoles</div><div class="tile-sub">Enseignement & Club astro</div></div>
     <div class="tile" onclick="showChapter(13)"><div class="tile-num">14</div><div class="tile-title">Sphère de Labeyrie</div><div class="tile-sub">Patrimoine scientifique</div></div>
   </div>
@@ -522,9 +522,9 @@ body{font-family:"Gilroy",sans-serif;background:var(--cream2);color:var(--ink);m
     <div class="info-card"><div style="width:20px;height:20px;background:rgb(1,112,201);border-radius:3px;color:white;font-weight:700;font-size:12px;display:inline-flex;align-items:center;justify-content:center;vertical-align:middle;margin-right:4px">P</div><strong>Parking</strong> — Bâtiment 18</div>
     <div class="info-card"><div style="width:20px;height:20px;background:rgb(255,255,0);border-radius:3px;border:1px solid #ccc;color:#333;font-weight:700;font-size:10px;display:inline-flex;align-items:center;justify-content:center;vertical-align:middle;margin-right:4px">→</div><strong>Entrée piétons & véhicules</strong> — 11 avenue Marcellin Berthelot</div>
     <div class="info-card">🚆 <strong>Transports</strong> — Gare SNCF Bellevue · Meudon-Val Fleury · RER C · Tramway Meudon-sur-Seine</div>
-    <div class="info-card">☔ <strong>Abri pluie</strong> — Restaurant, Bât. 4</div>
+    <div class="info-card">☔ <strong>En cas de pluie</strong> — L'accueil se fera au restaurant administratif (Bât. 4)</div>
     <div class="info-card">♿ <strong>Accessibilité</strong> — Le circuit des visites comporte de la marche en extérieur</div>
-    <div class="info-card">🚫 <strong>Accès forêt interdit</strong> — Merci de rester sur les allées et chemins balisés</div>
+    <div class="info-card">🚫 <strong>Accès interdit</strong> — À la forêt et au bord de l'étang du Bel Air</div>
     <div class="info-card">👨‍👩‍👧 <strong>Enfants</strong> — Les enfants sont sous la responsabilité de leurs parents ou accompagnants</div>
   </div>
 </div>
@@ -620,11 +620,13 @@ const chapters = [
   {
     tag:"Patrimoine restauré", title:"La Grande Coupole",
     chapeau:"Après deux années d'un chantier collectif et passionné, la Grande Lunette a retrouvé sa pleine capacité d'observation.",
-    content:`<p>Édifiée entre 1889 et 1893, la Grande Coupole de Meudon abrite l'une des plus grandes lunettes astronomiques d'Europe, avec un objectif de 83 cm de diamètre. Pendant des décennies, elle a servi aux observations du Soleil, des planètes et des étoiles doubles. Mais avec le temps, les mécanismes se sont grippés, les optiques ont souffert.</p>
-    <p>Un groupe de travail interne, le G3TLC, s'est formé et, en collaboration avec les services techniques de l'Observatoire et plusieurs entreprises spécialisées, a relevé le défi. Deux années de travaux minutieux ont permis de redonner sa vue à cet instrument emblématique. La coupole tourne à nouveau, la lunette pointe vers le ciel : en juillet 2024, les premières observations ont été réalisées après 33 ans de sommeil !</p>
-    <div class="img-wrap paysage" onclick="openLightbox('images/GC_exterieur.jpg','La Grande Coupole, vue extérieure')"><img src="images/GC_exterieur.jpg" alt="Grande Coupole extérieur"></div>
-    <div class="img-caption">La Grande Coupole, vue extérieure · © Observatoire de Paris</div>
-    <div class="fact"><div class="fact-lbl">Le saviez-vous ?</div><p>83 cm de diamètre, 16,23 m de focale. Lors de son inauguration en 1893, c'était la deuxième plus grande lunette du monde. Classée Monument Historique depuis 1972.</p></div>
+    content:`<p>Édifiée entre 1889 et 1893, la Grande Coupole de Meudon abrite la plus grande lunette astronomique nocturne d'Europe, avec un objectif de 83 cm de diamètre. Pendant des décennies, elle a servi aux observations et a joué un rôle central dans l'essor de l'astrophysique moderne. À son actif notamment : la mise en évidence de la rotation rétrograde d'Uranus en 1902, la réfutation des canaux martiens artificiels en 1909, la localisation des nuages de Mars au-dessus des tempêtes de poussières en 1924, les observations de diverses binaires, novæ et comètes dont la comète 1P/Halley en 1986. Mais avec le temps, les mécanismes se sont grippés, les optiques ont souffert.</p>
+    <p>Un groupe de travail interne, le G3TLC, a été mis en place par la présidence de l'Observatoire et, en collaboration avec les services techniques de l'Observatoire, a relevé le défi. Deux années de travaux minutieux ont permis de redonner sa vue à cet instrument emblématique. La coupole tourne à nouveau, la lunette pointe vers le ciel : en juillet 2024, les premières observations ont été réalisées après 33 ans de sommeil !</p>
+    <div class="img-wrap paysage" onclick="openLightbox('images/grande_lunette-86.jpg','La Grande Lunette')"><img src="images/grande_lunette-86.jpg" alt="La Grande Lunette"></div>
+    <div class="img-caption">La Grande Lunette · © Raphaël de Assis Peralta</div>
+    <div class="img-wrap paysage" onclick="openLightbox('images/Grande lunette-nuit.jpg','La Grande Lunette de nuit')"><img src="images/Grande lunette-nuit.jpg" alt="La Grande Lunette de nuit"></div>
+    <div class="img-caption">La Grande Lunette de nuit · © Raphaël de Assis Peralta</div>
+    <div class="fact"><div class="fact-lbl">Le saviez-vous ?</div><p>83 cm de diamètre, 16,23 m de focale. C'est la plus grande lunette nocturne d'Europe et la 3e au monde. Classée Monument Historique depuis 1972.</p></div>
     <div class="img-wrap paysage" onclick="openLightbox('images/GC_interieur.JPG','Intérieur de la Grande Coupole et sa lunette')"><img src="images/GC_interieur.JPG" alt="Intérieur Grande Coupole"></div>
     <div class="img-caption">Intérieur de la Grande Coupole et sa lunette · © Observatoire de Paris, ST</div>`
   },
@@ -693,8 +695,10 @@ const chapters = [
   {
     tag:"Optique · Photographie", title:"Le télescope de 1 mètre",
     chapeau:"Un instrument révolutionnaire, conçu pour photographier l'univers profond.",
-    content:`<p>Jules Janssen voulait doter Meudon d'un télescope dédié à la photographie des objets faibles : nébuleuses, amas d'étoiles et comètes. Ce télescope d'un mètre de diamètre avait une distance focale de seulement trois mètres, ce qui le rendait particulièrement lumineux et entièrement démontable.</p>
-    <p>Janssen l'avait conçu pour l'emporter lors de grandes expéditions scientifiques — notamment pour observer les passages de Vénus devant le Soleil ou les éclipses totales, aux quatre coins du monde.</p>
+    content:`<p>Jules Janssen voulait doter Meudon d'un télescope dédié à la photographie des objets faibles. Ce télescope d'un mètre de diamètre, particulièrement lumineux, était entièrement démontable — conçu pour les grandes expéditions scientifiques aux quatre coins du monde.</p>
+    <p>Il a donné de très nombreuses photographies de nébuleuses à la fin du XIXe siècle, puis a été largement utilisé pour des travaux de spectroscopie, notamment sur les comètes.</p>
+    <p>À partir de 1930, Bernard Lyot observait la polarisation de la lumière sur les surfaces planétaires avec ce télescope et procéda à des modifications de son optique pour l'adapter à ses travaux.</p>
+    <p>À la fin des années 60, Audouin Dollfus (1924–2010) fit moderniser le télescope en portant sa distance focale à 22 m pour ses travaux de polarimétrie. Une lunette auxiliaire de 32 cm fut fixée sur le tube.</p>
     <div class="img-wrap paysage" onclick="openLightbox('images/telescope_1m_arenou_2014_s.jpg','Le télescope de 1 mètre de Meudon')"><img src="images/telescope_1m_arenou_2014_s.jpg" alt="Télescope de 1 mètre"></div>
     <div class="img-caption">Le télescope de 1 mètre de Meudon · © Frédéric Arénou</div>
     <div class="img-wrap square" onclick="openLightbox('images/nebuleuse_triangle_telescope_1M.jpg','Nébuleuse du Triangle, photographiée avec le télescope de 1 m')"><img src="images/nebuleuse_triangle_telescope_1M.jpg" alt="Nébuleuse du Triangle"></div>
