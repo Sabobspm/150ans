@@ -140,7 +140,7 @@ body{font-family:"Gilroy",sans-serif;background:var(--cream2);color:var(--ink);m
 .q-expl.show{display:block}
 
 /* RÉSULTAT FINAL */
-.quiz-result{display:none;text-align:center;padding:2rem 1rem;background:var(--cream);margin:1rem;border-radius:12px;border:1px solid var(--border)}
+.quiz-result{display:none;text-align:center;padding:2rem 1rem;background:var(--purple-l);margin:1rem;border-radius:12px;border:2px solid var(--purple)}
 .quiz-result.show{display:block}
 .result-emoji{font-size:3rem;margin-bottom:.75rem}
 .result-score{font-family:"Arago",serif;font-size:2.5rem;font-weight:600;color:var(--purple);margin-bottom:.25rem}
@@ -379,6 +379,9 @@ body{font-family:"Gilroy",sans-serif;background:var(--cream2);color:var(--ink);m
   </div>
   <div class="quiz-progress"><div class="quiz-progress-bar" id="quiz-progress-bar"></div></div>
   <div class="quiz-body" id="quiz-body"></div>
+  <div id="quiz-score-bottom" style="display:none;text-align:center;padding:.5rem;font-family:'Gilroy',sans-serif;font-size:.75rem;color:var(--ink3)">
+    Score : <span id="score-bottom-num">0</span> / 14
+  </div>
   <div class="quiz-result" id="quiz-result">
     <div class="result-emoji" id="result-emoji"></div>
     <div class="result-score" id="result-score"></div>
@@ -516,6 +519,9 @@ body{font-family:"Gilroy",sans-serif;background:var(--cream2);color:var(--ink);m
   </div>
   <div class="quiz-progress"><div class="quiz-progress-bar" id="quiz-progress-bar"></div></div>
   <div class="quiz-body" id="quiz-body"></div>
+  <div id="quiz-score-bottom" style="display:none;text-align:center;padding:.5rem;font-family:'Gilroy',sans-serif;font-size:.75rem;color:var(--ink3)">
+    Score : <span id="score-bottom-num">0</span> / 14
+  </div>
   <div class="quiz-result" id="quiz-result">
     <div class="result-emoji" id="result-emoji"></div>
     <div class="result-score" id="result-score"></div>
@@ -604,7 +610,8 @@ body{font-family:"Gilroy",sans-serif;background:var(--cream2);color:var(--ink);m
     <button class="vl-close" onclick="closeVL()">✕</button>
   </div>
   <div class="vl-body">
-    <p style="font-family:'Gilroy',sans-serif;font-size:.75rem;font-weight:300;color:var(--ink3);margin-bottom:1rem;line-height:1.6">Hormis la Grande Coupole, les instruments sont en accès libre entre les visites de groupe. Renseignez-vous auprès des guides sur place.</p>
+    <p style="font-family:'Gilroy',sans-serif;font-size:.75rem;font-weight:300;color:var(--ink3);margin-bottom:.5rem;line-height:1.6">Hormis la Grande Coupole, les instruments sont en accès libre entre les visites de groupe. Renseignez-vous auprès des guides sur place.</p>
+    <p style="font-family:'Gilroy',sans-serif;font-size:.65rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--purple);margin-bottom:1rem">CRÉNEAUX LIBRES · <span style="opacity:.5;font-weight:400;text-transform:none;letter-spacing:0">Groupes en grisé (info guides)</span></p>
 
     <div class="vl-instrument">
       <div class="vl-inst-name">Table équatoriale — Bât. 5</div>
@@ -612,6 +619,11 @@ body{font-family:"Gilroy",sans-serif;background:var(--cream2);color:var(--ink);m
         <span class="vl-slot">14h00 – 14h30</span>
         <span class="vl-slot">15h20 – 16h00</span>
         <span class="vl-slot">16h20 – 17h00</span>
+      </div>
+      <div class="vl-slots" style="margin-top:.3rem;opacity:.5;font-size:.62rem">
+        <span class="vl-slot" style="background:var(--cream3)">G1 · 14h30–14h50</span>
+        <span class="vl-slot" style="background:var(--cream3)">G11 · 15h00–15h20</span>
+        <span class="vl-slot" style="background:var(--cream3)">G6 · 16h00–16h20</span>
       </div>
     </div>
 
@@ -622,6 +634,11 @@ body{font-family:"Gilroy",sans-serif;background:var(--cream2);color:var(--ink);m
         <span class="vl-slot">15h35 – 15h55</span>
         <span class="vl-slot">16h15 – 17h00</span>
       </div>
+      <div class="vl-slots" style="margin-top:.3rem;opacity:.5;font-size:.62rem">
+        <span class="vl-slot" style="background:var(--cream3)">G2 · 14h45–15h05</span>
+        <span class="vl-slot" style="background:var(--cream3)">G12 · 15h15–15h35</span>
+        <span class="vl-slot" style="background:var(--cream3)">G7 · 15h55–16h15</span>
+      </div>
     </div>
 
     <div class="vl-instrument">
@@ -631,6 +648,11 @@ body{font-family:"Gilroy",sans-serif;background:var(--cream2);color:var(--ink);m
         <span class="vl-slot">15h40 – 16h00</span>
         <span class="vl-slot">16h40 – 17h00</span>
       </div>
+      <div class="vl-slots" style="margin-top:.3rem;opacity:.5;font-size:.62rem">
+        <span class="vl-slot" style="background:var(--cream3)">G2 · 15h10–15h30</span>
+        <span class="vl-slot" style="background:var(--cream3)">G12 · 15h40–16h00</span>
+        <span class="vl-slot" style="background:var(--cream3)">G7 · 16h20–16h40</span>
+      </div>
     </div>
 
     <div class="vl-instrument">
@@ -638,6 +660,10 @@ body{font-family:"Gilroy",sans-serif;background:var(--cream2);color:var(--ink);m
       <div class="vl-slots">
         <span class="vl-slot">14h00 – 14h30</span>
         <span class="vl-slot">15h20 – 17h00</span>
+      </div>
+      <div class="vl-slots" style="margin-top:.3rem;opacity:.5;font-size:.62rem">
+        <span class="vl-slot" style="background:var(--cream3)">G8 · 14h30–14h50</span>
+        <span class="vl-slot" style="background:var(--cream3)">G3 · 15h00–15h20</span>
       </div>
     </div>
 
@@ -647,6 +673,10 @@ body{font-family:"Gilroy",sans-serif;background:var(--cream2);color:var(--ink);m
         <span class="vl-slot">14h00 – 15h00</span>
         <span class="vl-slot">15h50 – 17h00</span>
       </div>
+      <div class="vl-slots" style="margin-top:.3rem;opacity:.5;font-size:.62rem">
+        <span class="vl-slot" style="background:var(--cream3)">G9 · 15h00–15h20</span>
+        <span class="vl-slot" style="background:var(--cream3)">G4 · 15h30–15h50</span>
+      </div>
     </div>
 
     <div class="vl-instrument">
@@ -655,6 +685,10 @@ body{font-family:"Gilroy",sans-serif;background:var(--cream2);color:var(--ink);m
         <span class="vl-slot">14h00 – 14h20</span>
         <span class="vl-slot">14h40 – 15h00</span>
         <span class="vl-slot">15h20 – 17h00</span>
+      </div>
+      <div class="vl-slots" style="margin-top:.3rem;opacity:.5;font-size:.62rem">
+        <span class="vl-slot" style="background:var(--cream3)">G5 · 14h20–14h40</span>
+        <span class="vl-slot" style="background:var(--cream3)">G10 · 15h00–15h20</span>
       </div>
     </div>
     <div class="vl-instrument">
@@ -1001,6 +1035,8 @@ function answer(qIdx, choiceIdx) {
 
 function updateScoreBar() {
   document.getElementById('quiz-score-num').textContent = score + ' / ' + quizData.length;
+  document.getElementById('score-bottom-num').textContent = score;
+  if(answered > 0) document.getElementById('quiz-score-bottom').style.display = 'block';
   const pct = (answered / quizData.length) * 100;
   document.getElementById('quiz-progress-bar').style.width = pct + '%';
 }
@@ -1018,7 +1054,7 @@ function showResult() {
   document.getElementById('result-score').textContent = score + ' / ' + quizData.length;
   document.getElementById('result-msg').textContent = msg;
   r.classList.add('show');
-  r.scrollIntoView({behavior:'smooth', block:'center'});
+  setTimeout(() => r.scrollIntoView({behavior:'smooth', block:'start'}), 100);
 }
 
 function restartQuiz() {
