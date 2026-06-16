@@ -375,17 +375,17 @@ body{font-family:"Gilroy",sans-serif;background:var(--cream2);color:var(--ink);m
   <div class="section-header"><h2>Quiz</h2><p>Cliquez sur une réponse pour valider</p></div>
   <div class="quiz-score-bar">
     <span class="quiz-score-label">Score</span>
-    <span class="quiz-score-num" id="quiz-score-num">0 / 19</span>
+    <span class="quiz-score-num" id="quiz-score-num">0 / 20</span>
   </div>
   <div class="quiz-progress"><div class="quiz-progress-bar" id="quiz-progress-bar"></div></div>
   <div class="quiz-body" id="quiz-body"></div>
   <div id="quiz-score-bottom" style="display:none;text-align:center;padding:.5rem;font-family:'Gilroy',sans-serif;font-size:.75rem;color:var(--ink3)">
-    Score : <span id="score-bottom-num">0</span> / 14
+    Score : <span id="score-bottom-num">0</span> / 20
   </div>
   <div class="quiz-result" id="quiz-result">
     <div class="result-emoji" id="result-emoji"></div>
     <div class="result-score" id="result-score"></div>
-    <div class="result-label">bonnes réponses sur 14</div>
+    <div class="result-label">bonnes réponses sur 20</div>
     <div class="result-msg" id="result-msg"></div>
     <button class="btn-restart" onclick="restartQuiz()">Recommencer</button>
   </div>
@@ -507,27 +507,6 @@ body{font-family:"Gilroy",sans-serif;background:var(--cream2);color:var(--ink);m
         <div class="stop-item"><div class="stop-time">15h40</div><div class="stop-dot"></div><div class="stop-info"><div class="stop-name">Spectrohéliographe</div><div class="stop-detail">Bât. 7 · 15h40 → 16h00</div></div></div>
       </div>
     </div>
-  </div>
-</div>
-
-<!-- QUIZ INTERACTIF -->
-<div class="view" id="quiz-view">
-  <div class="section-header"><h2>Quiz</h2><p>Cliquez sur une réponse pour valider</p></div>
-  <div class="quiz-score-bar">
-    <span class="quiz-score-label">Score</span>
-    <span class="quiz-score-num" id="quiz-score-num">0 / 11</span>
-  </div>
-  <div class="quiz-progress"><div class="quiz-progress-bar" id="quiz-progress-bar"></div></div>
-  <div class="quiz-body" id="quiz-body"></div>
-  <div id="quiz-score-bottom" style="display:none;text-align:center;padding:.5rem;font-family:'Gilroy',sans-serif;font-size:.75rem;color:var(--ink3)">
-    Score : <span id="score-bottom-num">0</span> / 14
-  </div>
-  <div class="quiz-result" id="quiz-result">
-    <div class="result-emoji" id="result-emoji"></div>
-    <div class="result-score" id="result-score"></div>
-    <div class="result-label">bonnes réponses sur 11</div>
-    <div class="result-msg" id="result-msg"></div>
-    <button class="btn-restart" onclick="restartQuiz()">Recommencer</button>
   </div>
 </div>
 
@@ -966,18 +945,18 @@ const quizData = [
   // Instruments & science
   { section:"Instruments & science", q:"Quel est le diamètre de l'objectif principal de la Grande Lunette de Meudon ?", choices:["62 cm","83 cm","1 mètre"], correct:1, expl:"83 cm de diamètre pour une focale de 16,23 m. C'était la deuxième plus grande lunette du monde en 1893." },
   { section:null, q:"À quoi sert le cœlostat installé à Meudon ?", choices:["À mesurer la température du Soleil","À maintenir une image fixe du Soleil malgré la rotation de la Terre","À photographier les étoiles la nuit"], correct:1, expl:"Le cœlostat tourne à la moitié de la vitesse de rotation de la Terre pour garder le Soleil immobile dans le faisceau." },
-  { section:null, q:"Combien d'images par seconde la caméra du GCT peut-elle enregistrer ?", choices:["1 000 images/seconde","1 million d'images/seconde","1 milliard d'images/seconde"], correct:2, expl:"La lumière Cherenkov dure moins d'un milliardième de seconde — la caméra est un million de fois plus rapide qu'un appareil photo." },
+  { section:null, q:"Combien d'images par seconde la caméra du GCT peut-elle enregistrer ?", choices:["1 000 images/s","1 million d'images/s","1 milliard d'images/s"], correct:2, expl:"La lumière Cherenkov dure moins d'un milliardième de seconde — la caméra est un million de fois plus rapide qu'un appareil photo." },
   { section:null, q:"Sur quelle planète le rover Perseverance explore-t-il la surface avec un instrument développé à Meudon ?", choices:["La Lune","Mars","Jupiter"], correct:1, expl:"Un module de SuperCam, la caméra laser de Perseverance, a été développé et testé dans la salle blanche de Meudon." },
-  { section:null, q:"Depuis combien d'années Meudon observe-t-il le Soleil quotidiennement ?", choices:["Depuis 50 ans","Depuis 75 ans","Depuis plus de 115 ans"], correct:2, expl:"La collection systématique de spectrohéliogrammes quotidiens a débuté en 1920." },
+  { section:null, q:"Depuis combien d'années Meudon observe-t-il le Soleil quotidiennement ?", choices:["Depuis 50 ans","Depuis 75 ans","Depuis plus de 115 ans"], correct:2, expl:"La collection systématique de spectohéliogrammes quotidiens a débuté en 1920." },
   { section:null, q:"La table équatoriale, c'est quoi exactement ?", choices:["Une table où les astronomes mangent en regardant les étoiles","Une plateforme modulaire sur laquelle on fixe différents instruments","Un télescope pointé en permanence vers l'équateur"], correct:1, expl:"La table équatoriale est une monture sur laquelle on peut fixer à volonté différents instruments. Très ingénieux !" },
-  // Le domaine & ses secrets
-  { section:"Le domaine & ses secrets", q:"Qu'a inventé Bernard Lyot pour observer la couronne solaire sans attendre une éclipse ?", choices:["Le spectrohéliographe","Le coronographe","Le cœlostat"], correct:1, expl:"Bernard Lyot invente le coronographe en 1930, permettant d'étudier la couronne solaire en dehors des éclipses — une révolution pour l'astronomie solaire !" },
-  { section:null, q:"Cet objet mystérieux dans le parc, à quoi servait-il ?", img:"images/sphere_labeyrie_2.jpg", choices:["Une fontaine décorative","Un prototype d'interférométrie optique","Un pot de fleurs géant"], correct:1, expl:"La sphère de Labeyrie est un prototype des années 70 qui a permis de démontrer l'utilité de l'interférométrie optique, aujourd'hui utilisée par le VLT au Chili !" },
-  { section:null, q:"Quand je fais un pas sur le parcours Système solaire, combien de kilomètres est-ce que je parcours dans l'espace ?", choices:["1 million de km","10 millions de km","100 millions de km"], correct:1, expl:"L'échelle est de 1 m pour 10 millions de km. À cette échelle, tout le Système solaire représente 13 fois la France !" },
   { section:null, q:"Que détecte le Gamma-ray Cherenkov Telescope ?", choices:["La lumière visible des étoiles","Des éclairs de lumière bleutée produits par des rayons gamma cosmiques","Les ondes radio de l'Univers"], correct:1, expl:"Les rayons gamma cosmiques génèrent des gerbes de particules dans l'atmosphère qui émettent un bref éclair bleuté — la lumière Cherenkov — que le GCT capture !" },
   { section:null, q:"Pourquoi la tour solaire est-elle aussi haute ?", choices:["Pour voir plus loin dans l'espace","Pour dépasser les turbulences atmosphériques près du sol","Pour accueillir plus d'instruments"], correct:1, expl:"À 35 mètres de hauteur, les instruments s'affranchissent des couches d'air turbulentes qui brouillent les images." },
-  { section:null, q:"Combien de personnes travaillent à l'Observatoire de Paris – PSL ?", choices:["Environ 200","Environ 500","Environ 800"], correct:2, expl:"L'Observatoire de Paris – PSL compte aujourd'hui 800 personnes réparties sur trois sites : Paris, Meudon et Nançay." },
   { section:null, q:"À quoi sert l'enceinte SimEnOm de la salle blanche ?", choices:["À développer des photos astronomiques","À qualifier les instruments en vide thermique avant leur départ dans l'espace","À stocker les satellites"], correct:1, expl:"Depuis 1992, SimEnOm reproduit le vide thermique de l'espace pour tester tous les instruments spatiaux de l'Observatoire." },
+  // Le domaine & ses secrets
+  { section:"Le domaine & ses secrets", q:"Qu'a inventé Bernard Lyot pour observer la couronne solaire sans attendre une éclipse ?", choices:["Le spectohéliographe","Le coronographe","Le cœlostat"], correct:1, expl:"Bernard Lyot invente le coronographe en 1930, permettant d'étudier la couronne solaire en dehors des éclipses — une révolution pour l'astronomie solaire !" },
+  { section:null, q:"Cet objet mystérieux dans le parc, à quoi servait-il ?", img:"images/sphere_labeyrie_2.jpg", choices:["Une fontaine décorative","Un prototype d'interférométrie optique","Un pot de fleurs géant"], correct:1, expl:"La sphère de Labeyrie est un prototype des années 70 qui a permis de démontrer l'utilité de l'interférométrie optique, aujourd'hui utilisée par le VLT au Chili !" },
+  { section:null, q:"Quand je fais un pas sur le parcours Système solaire, combien de km est-ce que je parcours dans l'espace ?", choices:["1 million de km","10 millions de km","100 millions de km"], correct:1, expl:"L'échelle est de 1 m pour 10 millions de km. À cette échelle, tout le Système solaire représente 13 fois la France !" },
+  { section:null, q:"Combien de personnes travaillent à l'Observatoire de Paris – PSL ?", choices:["Environ 200","Environ 500","Environ 800"], correct:2, expl:"L'Observatoire de Paris – PSL compte aujourd'hui 800 personnes réparties sur trois sites : Paris, Meudon et Nançay." },
   { section:null, q:"Quel animal pouvez-vous croiser sur les allées du campus ?", choices:["Un chameau","Un renard","Un manchot"], correct:1, expl:"Des renards vivent sur le campus de Meudon ! Le domaine de 64 hectares est un véritable refuge pour la biodiversité." },
   { section:null, q:"Combien d'années la Grande Lunette a-t-elle été à l'arrêt avant de retrouver la lumière des astres en 2024 ?", choices:["15 ans","25 ans","33 ans"], correct:2, expl:"Après 33 ans de sommeil, la Grande Lunette a réalisé ses premières observations en juillet 2024 — une émotion immense pour toute l'équipe !" },
   { section:null, q:"En quelle année l'Observatoire de Paris a-t-il été fondé ?", choices:["1492","1667","1789"], correct:1, expl:"L'Observatoire de Paris a été fondé en 1667 par Louis XIV — c'est l'un des plus anciens observatoires astronomiques en activité au monde !" }
