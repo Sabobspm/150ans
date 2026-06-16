@@ -375,7 +375,7 @@ body{font-family:"Gilroy",sans-serif;background:var(--cream2);color:var(--ink);m
   <div class="section-header"><h2>Quiz</h2><p>Cliquez sur une réponse pour valider</p></div>
   <div class="quiz-score-bar">
     <span class="quiz-score-label">Score</span>
-    <span class="quiz-score-num" id="quiz-score-num">0 / 14</span>
+    <span class="quiz-score-num" id="quiz-score-num">0 / 19</span>
   </div>
   <div class="quiz-progress"><div class="quiz-progress-bar" id="quiz-progress-bar"></div></div>
   <div class="quiz-body" id="quiz-body"></div>
@@ -971,10 +971,107 @@ const quizData = [
   { section:null, q:"Depuis combien d'années Meudon observe-t-il le Soleil quotidiennement ?", choices:["Depuis 50 ans","Depuis 75 ans","Depuis plus de 115 ans"], correct:2, expl:"La collection systématique de spectrohéliogrammes quotidiens a débuté en 1920." },
   { section:null, q:"La table équatoriale, c'est quoi exactement ?", choices:["Une table où les astronomes mangent en regardant les étoiles","Une plateforme modulaire sur laquelle on fixe différents instruments","Un télescope pointé en permanence vers l'équateur"], correct:1, expl:"La table équatoriale est une monture sur laquelle on peut fixer à volonté différents instruments. Très ingénieux !" },
   // Le domaine & ses secrets
-  { section:"Le domaine & ses secrets", q:"Qui a découvert l'hélium dans l'atmosphère solaire en 1868 ?", choices:["Deslandres","Lyot","Janssen"], correct:2, expl:"Jules Janssen détecte en 1868 une raie spectrale inconnue dans la chromosphère solaire — c'était l'hélium !" },
+  { section:"Le domaine & ses secrets", q:"Qu'a inventé Bernard Lyot pour observer la couronne solaire sans attendre une éclipse ?", choices:["Le spectrohéliographe","Le coronographe","Le cœlostat"], correct:1, expl:"Bernard Lyot invente le coronographe en 1930, permettant d'étudier la couronne solaire en dehors des éclipses — une révolution pour l'astronomie solaire !" },
   { section:null, q:"Cet objet mystérieux dans le parc, à quoi servait-il ?", img:"images/sphere_labeyrie_2.jpg", choices:["Une fontaine décorative","Un prototype d'interférométrie optique","Un pot de fleurs géant"], correct:1, expl:"La sphère de Labeyrie est un prototype des années 70 qui a permis de démontrer l'utilité de l'interférométrie optique, aujourd'hui utilisée par le VLT au Chili !" },
   { section:null, q:"Quand je fais un pas sur le parcours Système solaire, combien de kilomètres est-ce que je parcours dans l'espace ?", choices:["1 million de km","10 millions de km","100 millions de km"], correct:1, expl:"L'échelle est de 1 m pour 10 millions de km. À cette échelle, tout le Système solaire représente 13 fois la France !" },
-  { section:null, q:"Quel animal pouvez-vous croiser sur les allées du campus ?", choices:["Un chameau","Un renard","Un manchot"], correct:1, expl:"Des renards vivent sur le campus de Meudon ! Le domaine de 64 hectares est un véritable refuge pour la biodiversité." }
+  { section:null, q:"Que détecte le Gamma-ray Cherenkov Telescope ?", choices:["La lumière visible des étoiles","Des éclairs de lumière bleutée produits par des rayons gamma cosmiques","Les ondes radio de l'Univers"], correct:1, expl:"Les rayons gamma cosmiques génèrent des gerbes de particules dans l'atmosphère qui émettent un bref éclair bleuté — la lumière Cherenkov — que le GCT capture !" },
+  { section:null, q:"Pourquoi la tour solaire est-elle aussi haute ?", choices:["Pour voir plus loin dans l'espace","Pour dépasser les turbulences atmosphériques près du sol","Pour accueillir plus d'instruments"], correct:1, expl:"À 35 mètres de hauteur, les instruments s'affranchissent des couches d'air turbulentes qui brouillent les images." },
+  { section:null, q:"Combien de personnes travaillent à l'Observatoire de Paris – PSL ?", choices:["Environ 200","Environ 500","Environ 800"], correct:2, expl:"L'Observatoire de Paris – PSL compte aujourd'hui 800 personnes réparties sur trois sites : Paris, Meudon et Nançay." },
+  { section:null, q:"À quoi sert l'enceinte SimEnOm de la salle blanche ?", choices:["À développer des photos astronomiques","À qualifier les instruments en vide thermique avant leur départ dans l'espace","À stocker les satellites"], correct:1, expl:"Depuis 1992, SimEnOm reproduit le vide thermique de l'espace pour tester tous les instruments spatiaux de l'Observatoire." },
+  { section:null, q:"Quel animal pouvez-vous croiser sur les allées du campus ?", choices:["Un chameau","Un renard","Un manchot"], correct:1, expl:"Des renards vivent sur le campus de Meudon ! Le domaine de 64 hectares est un véritable refuge pour la biodiversité." },
+  { section:null, q:"Combien d'années la Grande Lunette a-t-elle été à l'arrêt avant de retrouver la lumière des astres en 2024 ?", choices:["15 ans","25 ans","33 ans"], correct:2, expl:"Après 33 ans de sommeil, la Grande Lunette a réalisé ses premières observations en juillet 2024 — une émotion immense pour toute l'équipe !" }
+]
+
+let score = 0;
+let answered = 0;
+
+function initQuiz() { renderQuiz(); }
+
+function renderQuiz() {
+  score = 0; answered = 0;
+  updateScoreBar();
+  document.getElementById('quiz-result').classList.remove('show');
+  const body = document.getElementById('quiz-body');
+  body.innerHTML = '';
+  let currentSection = '';
+  quizData.forEach((q, i) => {
+    if(q.section && q.section !== currentSection) {
+      currentSection = q.section;
+      const s = document.createElement('div');
+      s.className = 'q-section-title';
+      s.textContent = q.section;
+      body.appendChild(s);
+    }
+    const card = document.createElement('div');
+    card.className = 'q-card';
+    card.id = 'q-'+i;
+    card.innerHTML = `<div class="q-num">Question ${String(i+1).padStart(2,'0')}</div>
+      ${q.img ? `<div style="width:120px;margin:0 auto .65rem;border-radius:6px;overflow:hidden"><img src="${q.img}" alt="" style="width:100%;display:block"></div>` : ''}
+      <div class="q-text">${q.q}</div>
+      <div class="q-choices">
+        ${q.choices.map((c,ci) => `<button class="q-choice" onclick="answer(${i},${ci})">${c}</button>`).join('')}
+      </div>
+      <div class="q-expl" id="expl-${i}">${q.expl}</div>`;
+    body.appendChild(card);
+  });
+}
+
+function answer(qIdx, choiceIdx) {
+  const q = quizData[qIdx];
+  const card = document.getElementById('q-'+qIdx);
+  const choices = card.querySelectorAll('.q-choice');
+  if(card.classList.contains('answered')) return;
+  card.classList.add('answered');
+  choices.forEach(c => c.classList.add('disabled'));
+  if(choiceIdx === q.correct) {
+    choices[choiceIdx].classList.add('correct');
+    score++;
+  } else {
+    choices[choiceIdx].classList.add('wrong');
+    choices[q.correct].classList.add('reveal');
+  }
+  document.getElementById('expl-'+qIdx).classList.add('show');
+  answered++;
+  updateScoreBar();
+  if(answered === quizData.length) {
+    setTimeout(showResult, 600);
+  }
+}
+
+function updateScoreBar() {
+  document.getElementById('quiz-score-num').textContent = score + ' / ' + quizData.length;
+  document.getElementById('score-bottom-num').textContent = score;
+  if(answered > 0) document.getElementById('quiz-score-bottom').style.display = 'block';
+  const pct = (answered / quizData.length) * 100;
+  document.getElementById('quiz-progress-bar').style.width = pct + '%';
+}
+
+function showResult() {
+  const r = document.getElementById('quiz-result');
+  const pct = score / quizData.length;
+  let emoji, msg;
+  if(pct === 1)      { emoji='🏆'; msg='Parfait ! Vous êtes un expert de l\'Observatoire !'; }
+  else if(pct >= .8) { emoji='⭐'; msg='Excellent ! Vous avez bien visité !'; }
+  else if(pct >= .6) { emoji='🔭'; msg='Pas mal ! L\'Observatoire n\'a plus beaucoup de secrets pour vous.'; }
+  else if(pct >= .4) { emoji='🌙'; msg='Vous progressez ! Une prochaine visite s\'impose.'; }
+  else               { emoji='🌱'; msg='C\'est un début ! L\'astronomie vous attend encore.'; }
+  document.getElementById('result-emoji').textContent = emoji;
+  document.getElementById('result-score').textContent = score + ' / ' + quizData.length;
+  document.getElementById('result-msg').textContent = msg;
+  r.classList.add('show');
+  setTimeout(() => r.scrollIntoView({behavior:'smooth', block:'start'}), 100);
+}
+
+function restartQuiz() {
+  quizInited = false;
+  initQuiz();
+  window.scrollTo(0,0);
+}
+</script>
+</body>
+</html
+    { section:null, q:"Quel animal pouvez-vous croiser sur les allées du campus ?" , choices:["Un chameau","Un renard","Un manchot"], correct:1, expl:"Des renards vivent sur le campus de Meudon ! Le domaine de 64 hectares est un véritable refuge pour la biodiversité." },
+  { section:null, q:"Combien d'années la Grande Lunette a-t-elle été à l'arrêt avant de retrouver la lumière des astres en 2024 ?", choices:["15 ans","25 ans","33 ans"], correct:2, expl:"Après 33 ans de sommeil, la Grande Lunette a réalisé ses premières observations en juillet 2024 — une émotion immense pour toute l'équipe !" }
 ];
 
 let score = 0;
